@@ -1,0 +1,50 @@
+translate.cislo_danu: No dan :
+translate.n_altis: N° altis :
+translate.skuska_v_inom_zavode_text: Essai realise sur autre site :
+translate.cislo_predchadzajucej_skusky: N° d'essai precedent :
+translate.nazov_dotknuteho_dielu: Libelle pieces ou elements concernes:
+translate.oddelenie_ziadatela: Service emetteur :
+translate.ziadatel_skusky: Demandeur de l'essai :
+translate.telefon: Telephone :
+translate.datum_vyplnenia: Date de la demande :
+translate.realizacia_skusky: Date et h proposee:
+translate.vozidla: Vehicule :
+translate.motorizacia: Motorisation :
+translate.referencia_dielu: N° de piece :
+translate.miesto_spotreby_post: Lieu :
+translate.dodavatel: Entrepreneur :
+translate.cislo_pracovneho_postupu: N° de gamme :
+translate.mnozstvo: Quantité :
+translate.ucastnici_skusky: Participants a l’essai :
+translate.dovod_skusky: Raison de l'essai :
+translate.zmena_oproti_seriovemu_stavu: Changement par rapport a la solution de serie :
+translate.zmena_sa_tyka: Ce changement concerne-t-il :
+translate.zmena_dielu: La pièce :
+translate.zmena_skrutkovania: Le vissage :
+translate.zmena_procesu: Le process :
+translate.zmena_bezpecnostneho_skrutkovania: Vissage de sécurité :
+translate.zmena_pracovneho_postupu: La gamme :
+translate.pripoj_foto_do_zalozky: Joindre Photo ou plan de la modif dans l'onglet Photos
+translate.priebeh_skusky: Deroulement de l'essai :
+translate.pozadovany_pocet_aut: Nombre de voitures requis:
+translate.dotknute_posty_na_montazi: 1 - Postes concernés au montage :
+translate.pozadovane_kontroly: 2 - Quels sont les contrôles prévus dans le flux (et fréquence) pour éviter toutes dérives (PQG, CVT, Banc Poly, Douche série,autres ) :
+translate.blokovat_auta_na_kontrolu: 4 -  Faut-il bloquer des véhicules pour analyses :
+translate.pocet_aut_realizovanych: Nombre de voitures réalisées:
+translate.skuska_jazda: Motifs/ Roulage 
+translate.skuska_hluk: Bruits :
+translate.skuska_sprcha: Douche :
+translate.skuska_iqf: IQF :
+translate.skuska_iqa: IQA :
+translate.skuska_ine: Autres :
+translate.modernizacia_po_skuske: Modernisation des vehicules :
+translate.retus: Retouches prévues :
+translate.submit: Confirmer la sélection
+translate.ingq: INGQ :
+translate.vyberte_si_z_moznosti: Choisissez parmi les options
+translate.vyberte_si_jednu_z_moznosti: Choisissez l'une des options
+translate.vsetky_typy: Tous les types
+translate.vsetci: Tous
+
+translate.ano: Oui
+translate.nie: Mon
