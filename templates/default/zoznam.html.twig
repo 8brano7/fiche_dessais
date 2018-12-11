@@ -53,12 +53,6 @@
 <form id="zaznam-form">
     <div id="zoznam-container" class="container">
         <div class="row">
-            <div class="col-md-4">
-                <label for="exampleInputEmail1" hidden="true">Skúška č :</label>
-                <input class="form-control form-control"  hidden="true" name="skuska_cislo" type="text"/>
-            </div>
-        </div>
-        <div class="row">
             <div class="col-md-6">
                 <label for="exampleInputEmail1">{{ 'translate.cislo_danu' | trans }}</label>
                 <input class="form-control form-control"  name="cislo_danu"  type="text" />
@@ -75,7 +69,7 @@
                 <input class="form-control form-control"  name="skuska_v_inom_zavode_text" type="text" />
             </div>
             <div class="col-md-6">
-                <select class="selectpicker" name="skuska_v_inom_zavode_select" multiple="multiple" data-live="true"  data-width="100%" title="{{ 'translate.vyberte_si_z_moznosti' | trans }}">
+                <select class="selectpicker" name="skuska_v_inom_zavode_select[]" multiple="multiple" data-live="true"  data-width="100%" title="{{ 'translate.vyberte_si_z_moznosti' | trans }}">
                     <option  value="Velizy">Velizy</option>
                     <option  value="Mulhouse"> Mulhouse</option>
                     <option  value="Poissy">Poissy</option>
@@ -127,11 +121,11 @@
         <div class="row">
             <div class="col-md-6">
             <label for="exampleInputEmail1">{{ 'translate.vozidla' | trans }}</label>
-                <select class="selectpicker" multiple data-live="true" data-width="100%" title="{{ 'translate.vyberte_si_z_moznosti' | trans }} " name="vozidla" >
+                <select class="selectpicker" multiple="multiple" data-width="100%" title="{{ 'translate.vyberte_si_z_moznosti' | trans }} " name="vozidla[]" >
                     <option></option>
-                    <option value="A58">{{ 'translate.vsetky_typy' | trans }}</option>
-                    <option value="A58">B6</option>
-                    <option value="A58">P21</option>
+                    <option value="Všetky typy">{{ 'translate.vsetky_typy' | trans }}</option>
+                    <option value="B6">B6</option>
+                    <option value="P21">P21</option>
                     <option VALUE="A9">A9</option>
                     <option VALUE="A58/A9">A58/A9</option>
                     <option VALUE="A9 VU">A9 VU</option>
@@ -145,9 +139,9 @@
 
             <div class="col-md-6">
                    <label for="exampleInputEmail1">{{ 'translate.motorizacia' | trans }}</label>
-                <select class="selectpicker" multiple data-live="true" data-width="100%" title="{{ 'translate.vyberte_si_z_moznosti' | trans }}" name="motorizacia" >
+                <select class="selectpicker" multiple data-live="true" data-width="100%" title="{{ 'translate.vyberte_si_z_moznosti' | trans }}" name="motorizacia[]" >
                     <option></option>
-                    <option value="">{{ 'translate.vsetky_typy' | trans }}</option>
+                    <option value="Všetky typy">{{ 'translate.vsetky_typy' | trans }}</option>
                     <option value="TT Essence / benzín">TT Essence / benzín</option>
                     <option value="TT Diesel">TT Diesel</option>
                 </select>
@@ -166,9 +160,9 @@
                 </div>
                 <div class="col-sm-6">
                   <label for="exampleInputEmail1">{{ 'translate.dodavatel' | trans }}</label>
-                    <select  class="selectpicker" multiple data-live="true" data-width="100%" title="{{ 'translate.vyberte_si_jednu_z_moznosti' | trans }}" name="dodavatel" >
-                        <option></option>
-                        <option>hhh</option>
+                    <select  class="selectpicker" multiple data-live="true" data-width="100%" title="{{ 'translate.vyberte_si_jednu_z_moznosti' | trans }}" name="dodavatel[]" >
+                        <option value="a">Doplni sa a</option>
+                        <option value="b">Doplni sa b</option>
 
                     </select>
              </div>
@@ -187,7 +181,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <label for="exampleInputEmail1">{{ 'translate.ucastnici_skusky' | trans }}</label>
-                    <select class="selectpicker"  multiple data-live="true" data-width="100%" title="Vyberte si z možnosti" name="ucastnici_skusky" >
+                    <select class="selectpicker"  multiple data-live="true" data-width="100%" title="Vyberte si z možnosti" name="ucastnici_skusky[]" >
                         <option></option>
                         <option>FER</option>
                         <option>PEI</option>
@@ -200,12 +194,12 @@
                 </div>
                 <div class="col-md-6">
                     <label for="exampleInputEmail1">{{ 'translate.ingq' | trans }}</label>
-                    <select class="selectpicker" multiple data-live="true"  data-width="100%" title="V{{ 'translate.vyberte_si_z_moznosti' | trans }}" name="ingq" >
+                    <select class="selectpicker"  name="ingq[]" multiple="multiple"  data-width="100%" title="{{ 'translate.vyberte_si_z_moznosti' | trans }}"  >
                         <option></option>
-                        <option>{{ 'translate.vsetci' | trans }}</option>
-                        <option>MECA</option>
-                        <option>DSEE</option>
-                        <option>DCHM</option>
+                        <option value="Všetci">{{ 'translate.vsetci' | trans }}</option>
+                        <option value="MECA">MECA</option>
+                        <option value="DSEE">DSEE</option>
+                        <option value="DCHM">DCHM</option>
                     </select>
                 </div>
             </div>

@@ -34,7 +34,6 @@ class DefaultController extends AbstractController
         $zaznamData = new Zaznam();
         $form = $this->createForm(ZaznamType::class, $zaznamData);
         $form->handleRequest($request);
-
         if ($form->isSubmitted() && $form->isValid()) {
                      /** @var UploadedFile  $file */
 

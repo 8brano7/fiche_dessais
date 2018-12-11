@@ -17,15 +17,16 @@ class ZaznamType extends AbstractType
     public function buildForm ( FormBuilderInterface $builder , array $options )
     {
         $builder
-            -> add('skuska_cislo' ,NumberType :: class )
-            -> add('c_danu' ,TextType :: class )
+
+            -> add('cislo_danu' ,TextType :: class )
             -> add('n_altis' ,TextType :: class )
             -> add('oddelenie_ziadatela' ,TextType :: class )
-//            -> add('skuska_v_inom_zavode_select' ,ChoiceType :: class )
-            ->add('skuska_v_inom_zavode_select', ChoiceType::class, array('required' => false, "expanded" => true, 'multiple' => true, 'choices' => array(
+            ->add('skuska_v_inom_zavode_select', ChoiceType::class, array('required' => false, "expanded" => true, 'multiple' => true, 'choices' => array (
                 "Velizy" => "Velizy",
                 "Mulhouse"=> "Mulhouse",
                 "Poissy"=> "Poissy",  )))
+
+
             -> add('skuska_v_inom_zavode_text' ,TextType :: class )
             -> add('cislo_predchadzajucej_skusky' ,NumberType :: class )
             -> add('nazov_dotknuteho_dielu' ,TextType :: class )
@@ -40,12 +41,24 @@ class ZaznamType extends AbstractType
             -> add('mnozstvo' ,NumberType :: class )
             -> add('cislo_pracovneho_postupu' ,NumberType :: class )
             -> add('mnozstvo' ,NumberType :: class )
-            -> add('ucastnici_skusky' ,TextType :: class )
-            -> add('ingq' ,TextType :: class )
+            ->add('ucastnici_skusky', ChoiceType::class, array('required' => false, "expanded" => true, 'multiple' => true, 'choices' => array (
+                "FER" => "FER",
+                "PEI"=> "PEI",
+                "MON"=> "MON",
+                "CMON"=> "CMON",
+                "QCP"=> "QCP",
+                "INGQ"=> "INGQ",)))
+            ->add('ingq', ChoiceType::class, array('required' => false, "expanded" => true, 'multiple' => true, 'choices' => array (
+                "Všetci" => "Všetci",
+                "MECA"=> "MECA",
+                "DSEE"=> "DSEE",
+                "DCHM"=> "DCHM",)))
+
             -> add('zmena_dielu' ,TextType :: class )
             -> add('zmena_bezpecnostneho_skrutkovania' ,TextType :: class )
             -> add('zmena_procesu' ,TextType :: class )
             -> add('zmena_pracovneho_postupu' ,TextType :: class )
+            -> add('zmena_skrutkovania' ,TextType :: class )
             -> add('pozadovany_pocet_aut' ,NumberType :: class )
             -> add('pocet_aut_realizovanych' ,NumberType :: class )
             -> add('dotknute_posty_na_montazi' ,TextType :: class )
@@ -62,11 +75,24 @@ class ZaznamType extends AbstractType
             -> add('skuska_ine' ,TextType :: class )
             -> add('retus' ,TextType :: class )
             -> add('modernizacia_po_skuske' ,TextType :: class )
-            ->add('realizacia_skusky_datum', DateType::class, ["widget"=>"single_text","format"=>"dd-MM-yyyy"])
-            -> add('motorizacia' ,TextType :: class )
-            -> add('vozidla' ,TextType :: class )
-//            -> add('pocet_aut' ,NumberType :: class )
-            -> add('dodavatel' ,TextType :: class )
+            ->add('realizacia_skusky', DateType::class, ["widget"=>"single_text","format"=>"dd-MM-yyyy"])
+            ->add('motorizacia', ChoiceType::class, array('required' => false, "expanded" => true, 'multiple' => true, 'choices' => array (
+                "Všetky typy" => "Všetky typy",
+                "TT Essence / benzín"=> "TT Essence / benzín",
+                "TT Diesel"=> "TT Diesel",)))
+            ->add('vozidla', ChoiceType::class, array('required' => false, "expanded" => true, 'multiple' => true, 'choices' => array (
+                "Všetky typy" => "Všetky typy",
+                "B6"=> "B6",
+                "P21"=> "P21",
+                "A9"=> "A9",
+                "A58/A9"=> "A58/A9",
+                "A9 VU"=> "A9 VU",
+                "A9 Auto école"=> "A9 Auto école",
+                "A9 POLICE"=> "A9 POLICE",
+                "B618"=> "B618",)))
+            ->add('dodavatel', ChoiceType::class, array('required' => false, "expanded" => true, 'multiple' => true, 'choices' => array (
+                "a" => "a",
+                "b"=> "b",)))
             -> add('fotka' ,FileType :: class, array('label' => 'nahraj fotku') )
         ;
 

@@ -17,10 +17,7 @@ class Zaznam
      */
     private $id;
 
-    /**
-     * @ORM\Column(type="integer", nullable=true)
-     */
-    private $skuska_cislo;
+
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -98,7 +95,7 @@ class Zaznam
     private $c_danu;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="simple_array", nullable=true)
      */
     private $dodavatel;
 
@@ -113,25 +110,16 @@ class Zaznam
     private $mnozstvo;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="simple_array", nullable=true)
      */
     private $ucastnici_skusky;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="simple_array", nullable=true)
      */
     private $ingq;
 
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $ucastnici_pvs;
 
-
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $metier_autres;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -236,26 +224,6 @@ class Zaznam
 
 
 
-    /**
-     * @ORM\Column(type="datetime", nullable=true)
-     */
-    private $realizacia_skusky_datum;
-
-
-
-
-    /**
-     * @ORM\Column(type="integer", nullable=true)
-     */
-    private $vydanie;
-
-
-
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $schvalovatel;
-
 
     /**
      * @ORM\Column(type="simple_array", nullable=true)
@@ -288,17 +256,7 @@ class Zaznam
         return $this->id;
     }
 
-    public function getSkuskaCislo(): ?int
-    {
-        return $this->skuska_cislo;
-    }
 
-    public function setSkuskaCislo(?int $skuska_cislo): self
-    {
-        $this->skuska_cislo = $skuska_cislo;
-
-        return $this;
-    }
 
     public function getCisloDanu(): ?string
     {
@@ -477,12 +435,12 @@ class Zaznam
         return $this;
     }
 
-    public function getDodavatel(): ?string
+    public function getDodavatel(): ?array
     {
         return $this->dodavatel;
     }
 
-    public function setDodavatel(?string $dodavatel): self
+    public function setDodavatel(?array $dodavatel): self
     {
         $this->dodavatel = $dodavatel;
 
@@ -513,41 +471,30 @@ class Zaznam
         return $this;
     }
 
-    public function getUcastniciSkusky(): ?string
+    public function getUcastniciSkusky(): ?array
     {
         return $this->ucastnici_skusky;
     }
 
-    public function setUcastniciSkusky(?string $ucastnici_skusky): self
+    public function setUcastniciSkusky(?array $ucastnici_skusky): self
     {
         $this->ucastnici_skusky = $ucastnici_skusky;
 
         return $this;
     }
 
-    public function getIngq(): ?string
+    public function getIngq(): ?array
     {
         return $this->ingq;
     }
 
-    public function setIngq(?string $ingq): self
+    public function setIngq(?array $ingq): self
     {
         $this->ingq = $ingq;
 
         return $this;
     }
 
-    public function getUcastniciPvs(): ?string
-    {
-        return $this->ucastnici_pvs;
-    }
-
-    public function setUcastniciPvs(?string $ucastnici_pvs): self
-    {
-        $this->ucastnici_pvs = $ucastnici_pvs;
-
-        return $this;
-    }
 
 
 
@@ -793,25 +740,13 @@ class Zaznam
     }
 
 
-    public function getRealizaciaSkuskyDatum(): ?\DateTimeInterface
-    {
-        return $this->realizacia_skusky_datum;
-    }
 
-    public function setRealizaciaSkuskyDatum(?\DateTimeInterface $realizacia_skusky_datum): self
-    {
-        $this->realizacia_skusky_datum = $realizacia_skusky_datum;
-
-        return $this;
-    }
-
-
-    public function getMotorizacia(): ?string
+    public function getMotorizacia(): ?array
     {
         return $this->motorizacia;
     }
 
-    public function setMotorizacia(?string $motorizacia): self
+    public function setMotorizacia(?array $motorizacia): self
     {
         $this->motorizacia = $motorizacia;
 
@@ -819,12 +754,12 @@ class Zaznam
     }
 
 
-    public function getVozidla(): ?string
+    public function getVozidla(): ?array
     {
         return $this->vozidla;
     }
 
-    public function setVozidla(?string $vozidla): self
+    public function setVozidla(?array $vozidla): self
     {
         $this->vozidla = $vozidla;
 
