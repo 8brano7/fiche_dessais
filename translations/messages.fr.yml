@@ -46,5 +46,8 @@ translate.vyberte_si_jednu_z_moznosti: Choisissez l'une des options
 translate.vsetky_typy: Tous les types
 translate.vsetci: Tous
 
+translate.povinny_udaj: Cette information este obligatoire!
+translate.zle_zadany_udaj: Ce n'est pas le bon format!
+
 translate.ano: Oui
 translate.nie: Mon

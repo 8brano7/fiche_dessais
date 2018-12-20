@@ -32,7 +32,7 @@ class Zaznam
 
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=255)
      */
     private $oddelenie_ziadatela;
 
@@ -57,12 +57,12 @@ class Zaznam
     private $nazov_dotknuteho_dielu;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=255)
      */
     private $ziadatel_skusky;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\Column(type="integer")
      */
     private $telefon;
 
@@ -105,12 +105,12 @@ class Zaznam
     private $cislo_pracovneho_postupu;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\Column(type="integer")
      */
     private $mnozstvo;
 
     /**
-     * @ORM\Column(type="simple_array", nullable=true)
+     * @ORM\Column(type="simple_array")
      */
     private $ucastnici_skusky;
 
@@ -158,12 +158,12 @@ class Zaznam
 
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\Column(type="integer")
      */
     private $pozadovany_pocet_aut;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=255)
      */
     private $blokovat_auta_na_kontrolu;
 
@@ -213,7 +213,7 @@ class Zaznam
     private $skuska_ine;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=255)
      */
     private $modernizacia_po_skuske;
 
@@ -232,7 +232,7 @@ class Zaznam
 
 
     /**
-     * @ORM\Column(type="simple_array", nullable=true)
+     * @ORM\Column(type="simple_array")
      */
     private $vozidla;
 
@@ -590,7 +590,7 @@ class Zaznam
 
     public function setPozadovanyPocetAut(?int $pozadovany_pocet_aut): self
     {
-        $this->ppozadovany_pocet_aut = $pozadovany_pocet_aut;
+        $this->pozadovany_pocet_aut = $pozadovany_pocet_aut;
 
         return $this;
     }

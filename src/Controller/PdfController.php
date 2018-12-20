@@ -9,6 +9,8 @@ use Symfony\Component\HttpFoundation\Response ;
 use Dompdf\Dompdf;
 use Dompdf\Options;
 
+
+
 class PdfController extends Controller
 {
     /**

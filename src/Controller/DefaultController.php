@@ -45,7 +45,7 @@ class DefaultController extends AbstractController
              $zaznamData->setFotka($fileName);
 
 
-//            if (empty($form->get('fotka'))) {
+//            if (!empty($form->get('fotka'))) {
 //                $file = $form->get('fotka')->getData();
 //
 //                $fileName = md5(uniqid()).'.'.$file->guessExtension();
@@ -64,6 +64,13 @@ class DefaultController extends AbstractController
 
 
 
+    /**
+     * @Route(path="skuska", name="skuska_action")
+     */
+    public function skuska () {
+
+        return $this->render('default/mypdf.html.twig');
+    }
 
 
 
