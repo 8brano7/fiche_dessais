@@ -14,10 +14,10 @@ use Dompdf\Options;
 class PdfController extends Controller
 {
     /**
-     * @Route(path="/{_locale}/{zaznam}/pdf", name="pdf_action")
-     *
-     * @return Response
-     */
+ * @Route(path="/{_locale}/{zaznam}/pdf", name="pdf_action")
+ *
+ * @return Response
+ */
     public function pdfAction(Zaznam $zaznam) {
         // Configure Dompdf according to your needs
         $pdfOptions = new Options();
@@ -32,7 +32,7 @@ class PdfController extends Controller
 //        ]);
 
         // Retrieve the HTML generated in our twig file
-        $html = $this->renderView('default/mypdf.html.twig', [
+        $html = $this->renderView('default/mypdf.html.twig.', [
             'title' => "Welcome to our PDF Test",  'zaznam' => $zaznam
         ]);
 
@@ -65,5 +65,33 @@ class PdfController extends Controller
         // Send some text response
         return new Response("The PDF file has been succesfully generated !");
     }
+
+
+
+    /**
+     * @Route(path="/{_locale}/{zaznam}/pdf2", name="pdf_action2")
+     *
+     * @return Response
+     */
+    public function pdfAction2(Zaznam $zaznam) {
+            $html = $this->renderView('default/mypdf.html.twig', [
+                'zaznam' => $zaznam
+            ]);
+
+            $filename = sprintf('specifications-%s.pdf', date('Y-m-d-hh-ss'));
+
+            return new Response(
+                $this->get('knp_snappy.pdf')->getOutputFromHtml($html),
+                200,
+                [
+                    'Content-Type'        => 'application/pdf',
+                    'Content-Disposition' => sprintf('attachment; filename="%s"', $filename),
+                ]
+            );
+        }
+
+
+
+
 
 }

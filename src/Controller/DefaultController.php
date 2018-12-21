@@ -65,11 +65,13 @@ class DefaultController extends AbstractController
 
 
     /**
-     * @Route(path="skuska", name="skuska_action")
+     * @Route(path="skuska/{zaznam}/", name="skuska_action")
      */
-    public function skuska () {
+    public function skuska (Zaznam $zaznam) {
 
-        return $this->render('default/mypdf.html.twig');
+        return $this->render('default/mypdf.html.twig', [
+            'zaznam' => $zaznam
+            ]);
     }
 
 

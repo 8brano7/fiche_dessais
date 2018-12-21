@@ -1,59 +1,75 @@
-{% extends 'base.html.twig' %}
-{% block title %}fiche_essais{% endblock %}
-{% block body %}
 
 
-<style>
-    .row.no-gutter {
-        margin-left: 0;
-        margin-right: 0;
-    }
-    .row.no-gutter [class*='col-']:not(:first-child),
-    .row.no-gutter [class*='col-']:not(:last-child) {
-        padding-right: 0;
-        padding-left: 0;
-    }
-    .row > div {
-        background: #ffffff;
-        /*border: 1px solid;*/
-    }
+{# download-specifications/pdf.html.twig #}
+{% block stylesheets %}
 
-    .row {
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap/bootstrap.css') }}">
 
-        border: 0px solid;
-    }
+{#<link rel="stylesheet" href="{{ asset('css/bootstrap/bootstrap.css') }}">#}
+{% endblock %}
 
-    #zoznam-container {
-        border: 1px solid #d2d2d2;
-        border-radius: 2rem;
-        padding: 2rem;
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
-    }
-
-    textarea {
-        padding: 10px;
-        line-height: 1.5;
-        background: white;
-        width: 500px;
-        height: 50px;
-        resize: none;
-    }
-
-
-</style>
+<html lang="es">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 
 
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-5">aaaaaaaa</div>
-            <div class="col-sm-5">bbbbbbbbb</div>
+
+    <style>
+
+        .row.no-gutter {
+            margin-left: 0;
+            margin-right: 0;
+        }
+        .row.no-gutter [class*='col-']:not(:first-child),
+        .row.no-gutter [class*='col-']:not(:last-child) {
+            padding-right: 0;
+            padding-left: 0;
+        }
+        .row > div {
+            background: #ffffff;
+            /*border: 1px solid;*/
+        }
+
+        .row {
+
+            border: 0px solid;
+        }
+
+        #zoznam-container {
+            border: 1px solid #d2d2d2;
+            border-radius: 2rem;
+            padding: 2rem;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+        }
+
+        textarea {
+            padding: 10px;
+            line-height: 1.5;
+            background: white;
+            width: 500px;
+            height: 50px;
+            resize: none;
+        }
+
+
+    </style>
+
+   <div id="zoznam-container" class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <label for="exampleInputEmail1">{{ 'translate.cislo_danu' | trans }}</label>
+            <input class="form-control form-control"   name="cislo_danu"  type="number" oninvalid="this.setCustomValidity('{{ 'translate.zle_zadany_udaj' | trans }}')"  onchange="this.setCustomValidity('')"  />
         </div>
+        <div class="col-md-6">
+            <label for="exampleInputEmail1">{{ 'translate.n_altis' | trans }}</label>
+            <input class="form-control form-control"  name="n_altis" type="text"   />
+        </div>
+
     </div>
-
-                    {% endblock %}
-
-
+   </div>
