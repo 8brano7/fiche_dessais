@@ -90,9 +90,6 @@ class ZaznamType extends AbstractType
                 "A9 Auto école"=> "A9 Auto école",
                 "A9 POLICE"=> "A9 POLICE",
                 "B618"=> "B618",)))
-            ->add('dodavatel', ChoiceType::class, array('required' => false, "expanded" => true, 'multiple' => true, 'choices' => array (
-                "a" => "a",
-                "b"=> "b",)))
             -> add('fotka' ,FileType :: class, array('label' => 'nahraj fotku') )
         ;
 

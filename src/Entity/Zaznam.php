@@ -95,7 +95,7 @@ class Zaznam
     private $c_danu;
 
     /**
-     * @ORM\Column(type="simple_array", nullable=true)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $dodavatel;
 
@@ -435,12 +435,12 @@ class Zaznam
         return $this;
     }
 
-    public function getDodavatel(): ?array
+    public function getDodavatel(): ?string
     {
         return $this->dodavatel;
     }
 
-    public function setDodavatel(?array $dodavatel): self
+    public function setDodavatel(?string $dodavatel): self
     {
         $this->dodavatel = $dodavatel;
 
