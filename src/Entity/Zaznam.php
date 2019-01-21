@@ -790,5 +790,29 @@ class Zaznam
         return $this;
     }
 
+    
+    public function getUcastniciSkuskyText () {
+        return implode(", ",$this->getUcastniciSkusky());
+    }
+
+    public function getVozidlaArray () {
+        return implode(", ",$this->getVozidla());
+    }
+
+    public function getMotorizaciaArray () {
+        return implode(", ",$this->getMotorizacia());
+    }
+
+    public function getUcastniciSkuskyArray () {
+        return implode(", ",$this->getUcastniciSkusky());
+    }
+
+    public function getINGQArray () {
+        return implode(", ",$this->getIngq());
+    }
+
+    public function getDatumVyplneniaArray () {
+        return implode(", ",$this->getDatumVyplnenia());
+    }
 
 }
