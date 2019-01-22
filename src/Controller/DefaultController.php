@@ -21,6 +21,7 @@ class DefaultController extends AbstractController
     public function home (EntityManagerInterface $em) {
 
         return $this->render('default/zoznam.html.twig');
+
     }
 
 
@@ -38,20 +39,22 @@ class DefaultController extends AbstractController
                      /** @var UploadedFile  $file */
 
           // funckia na nahravanie obrazka, v services som si definoval cestu kde to bude ukladat prostrednictvom upload_directory
-            $file = $form->get('fotka')->getData();
-
-             $fileName = md5(uniqid()).'.'.$file->guessExtension();
-             $file->move($this->getParameter('upload_directory'), $fileName);
-             $zaznamData->setFotka($fileName);
-
-
-//            if (!empty($form->get('fotka'))) {
-//                $file = $form->get('fotka')->getData();
+//            $file = $form->get('fotka')->getData();
 //
-//                $fileName = md5(uniqid()).'.'.$file->guessExtension();
-//                $file->move($this->getParameter('upload_directory'), $fileName);
-//                $zaznamData->setFotka($fileName);
-//            }
+//             $fileName = md5(uniqid()).'.'.$file->guessExtension();
+//             $file->move($this->getParameter('upload_directory'), $fileName);
+//             $zaznamData->setFotka($fileName);
+
+//             dump($form->get('fotka'));
+
+            if (!empty($form->get('fotka'))) {
+                $file = $form->get('fotka')->getData();
+
+                $fileName = md5(uniqid()).'.'.$file->guessExtension();
+                $file->move($this->getParameter('upload_directory'), $fileName);
+                $zaznamData->setFotka($fileName);
+
+            }
 
 
             $em->persist($zaznamData);
@@ -73,6 +76,7 @@ class DefaultController extends AbstractController
             'zaznam' => $zaznam
             ]);
     }
+
 
 
 

@@ -248,7 +248,7 @@ class Zaznam
      * @Assert\File(mimeTypes={"image/jpeg"})
      * @ORM\Column(name="fotka", type="string", length=255, nullable=true)
      */
-    private $fotka;
+    private $fotka=null;
 
 
     public function getId(): ?int
@@ -811,8 +811,6 @@ class Zaznam
         return implode(", ",$this->getIngq());
     }
 
-    public function getDatumVyplneniaArray () {
-        return implode(", ",$this->getDatumVyplnenia());
-    }
+
 
 }

@@ -90,7 +90,7 @@ class ZaznamType extends AbstractType
                 "A9 Auto école"=> "A9 Auto école",
                 "A9 POLICE"=> "A9 POLICE",
                 "B618"=> "B618",)))
-            -> add('fotka' ,FileType :: class, array('label' => 'nahraj fotku') )
+            -> add('fotka' ,FileType :: class, array('required' => false, 'label' => 'nahraj fotku') )
         ;
 
 
