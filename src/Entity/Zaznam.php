@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\DependencyInjection\Container;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -243,12 +244,20 @@ class Zaznam
 
     /**
      * @var string
-     * @Assert\NotBlank(message="nahrajte obrazok prosim")
      * @Assert\Image()
      * @Assert\File(mimeTypes={"image/jpeg"})
      * @ORM\Column(name="fotka", type="string", length=255, nullable=true)
      */
     private $fotka=null;
+    /**
+     * @var Container
+     */
+    private $container;
+
+    public function __construct(Container $container)
+    {
+        $this->container = $container;
+    }
 
 
     public function getId(): ?int
@@ -788,6 +797,15 @@ class Zaznam
         $this->fotka = $fotka;
 
         return $this;
+    }
+
+    public function getFotka64() : string {
+        $path = 'images/'. $this->fotka;
+        $type = pathinfo($path, PATHINFO_EXTENSION);
+        $data = file_get_contents($path);
+        $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
+
+        return $base64;
     }
 
     

@@ -45,20 +45,29 @@ class DefaultController extends AbstractController
 //             $file->move($this->getParameter('upload_directory'), $fileName);
 //             $zaznamData->setFotka($fileName);
 
-//             dump($form->get('fotka'));
+            dump($form->get('fotka'));
+
+
+
 
             if (!empty($form->get('fotka'))) {
                 $file = $form->get('fotka')->getData();
-
-                $fileName = md5(uniqid()).'.'.$file->guessExtension();
+             //   if ($form instanceof WhateverObject) {
+                $fileName = md5(uniqid()).'.'.$file->guessExtension() ;
                 $file->move($this->getParameter('upload_directory'), $fileName);
                 $zaznamData->setFotka($fileName);
+               // }
 
-            }
 
 
             $em->persist($zaznamData);
             $em->flush();
+
+            }
+
+
+
+
             return new JsonResponse(['msg' => 'Nahrate'], Response::HTTP_OK);
         }
         return new JsonResponse(['msg' => 'Doslo k chybe'], Response::HTTP_BAD_REQUEST);
