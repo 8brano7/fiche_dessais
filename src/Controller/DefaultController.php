@@ -52,10 +52,17 @@ class DefaultController extends AbstractController
 
             if (!empty($form->get('fotka'))) {
                 $file = $form->get('fotka')->getData();
+                if(!empty($file)) {
+                    $fileName = md5(uniqid()).'.'.$file->guessExtension() ;
+                    $file->move($this->getParameter('upload_directory'), $fileName);
+                    $zaznamData->setFotka($fileName);
+
+                }
              //   if ($form instanceof WhateverObject) {
-                $fileName = md5(uniqid()).'.'.$file->guessExtension() ;
-                $file->move($this->getParameter('upload_directory'), $fileName);
-                $zaznamData->setFotka($fileName);
+
+//                $fileName = md5(uniqid()).'.'.$file->guessExtension() ;
+//                $file->move($this->getParameter('upload_directory'), $fileName);
+//                $zaznamData->setFotka($fileName);
                // }
 
 

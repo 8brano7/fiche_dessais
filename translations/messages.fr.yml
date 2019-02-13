@@ -2,7 +2,7 @@ translate.cislo_danu: No dan :
 translate.n_altis: N° altis :
 translate.skuska_v_inom_zavode_text: Essai realise sur autre site :
 translate.cislo_predchadzajucej_skusky: N° d'essai precedent :
-translate.nazov_dotknuteho_dielu: Libelle pieces ou elements concernes:
+translate.nazov_dotknuteho_dielu: Pieces ou elements concernes:
 translate.oddelenie_ziadatela: Service emetteur :
 translate.ziadatel_skusky: Demandeur de l'essai :
 translate.telefon: Telephone :
@@ -51,3 +51,6 @@ translate.zle_zadany_udaj: Ce n'est pas le bon format!
 
 translate.ano: Oui
 translate.nie: Mon
+
+translate.nahrataFotka: Photo téléchargée:
+translate.vyber: Selection:

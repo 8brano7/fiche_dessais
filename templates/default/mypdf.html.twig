@@ -101,6 +101,8 @@
             font-size: 14px;
         }
 
+
+
         /*!
  * Bootstrap v3.3.0 (http://getbootstrap.com)
  * Copyright 2011-2014 Twitter, Inc.
@@ -5494,9 +5496,23 @@
         }
 
 
+
+
     </style>
 
 
+    <style>
+        .col-xs-4 {
+            margin-top: .9rem!important;
+        }
+
+        .col-xs-12 {
+            margin-top: .9rem!important;
+        }
+
+
+
+    </style>
 
     <form id="zaznam-form">
         <div id="zoznam-container" class="container">
@@ -5513,22 +5529,17 @@
                     <label for="exampleInputEmail1">{{ 'translate.cislo_predchadzajucej_skusky' | trans }}</label>
                     <input class="form-control form-control" name="cislo_predchadzajucej_skusky" value="{{ zaznam.cisloPredchadzajucejSkusky }}" />
                 </div>
-
             </div>
-
-
-
             <div class="row">
                 <div class="col-xs-4">
                     <label for="exampleInput">{{ 'translate.skuska_v_inom_zavode_text' | trans }}</label>
                     <input class="form-control form-control"  name="skuska_v_inom_zavode_text" value="{{ zaznam.skuskaVInomZavodeText }}"/>
                 </div>
                 <div class="col-xs-4">
-                    <label for="exampleInput"></label>
+                    <label for="exampleInput">{{ 'translate.vyber' | trans }}</label>
                     <input class="form-control"  name="pozadovany_pocet_aut" value="{{ zaznam.pozadovanyPocetAut }}" />
 
                 </div>
-
                 <div class="col-xs-4">
                     <label for="exampleInputEmail1">{{ 'translate.nazov_dotknuteho_dielu' | trans }}</label>
                     <input class="form-control form-control" value="{{ zaznam.nazovDotknutehoDielu }}"  name="nazov_dotknuteho_dielu" type="text"/>
@@ -5654,19 +5665,19 @@
                            {{ zaznam.zmenaPracovnehoPostupu }}
                         </div>
                     </div>
-                    <br>
+
 
                 </div>
             </div>
 
 
             <div class="row">
-                <div class="col-xs-12">
-                    <label for="exampleInputEmail1">{{ 'translate.priebeh_skusky' | trans }}</label>
+                {#<div class="col-xs-12">#}
+                    {#<label for="exampleInputEmail1">{{ 'translate.priebeh_skusky' | trans }}</label>#}
 
-                </div>
+                {#</div>#}
 
-                <div class="col-xs-3">
+                <div class="col-xs-4">
                     <label for="exampleInputEmail1">{{ 'translate.pozadovany_pocet_aut' | trans }}</label>
                     <input class="form-control"  name="pozadovany_pocet_aut"   value="{{ zaznam.pozadovanyPocetAut }}" type="text"  />
                 </div>
@@ -5747,10 +5758,11 @@
         </div>
 
 
-        {#<tr class="">#}
-            {#<td>{{ zaznam.fotka }}</td>#}
-            {#<td> <img src="{{ asset('public/images/' ~ zaznam.fotka) }}" class="img-rounded"/></td>#}
-        {#</tr>#}
+
+        <div class="col-xs-12">
+            <label for="exampleInputEmail1">{{ 'translate.nahrataFotka' | trans }}</label>
+        </div>
+
 
         {% if zaznam.fotka is not null %}
             <tr class="">

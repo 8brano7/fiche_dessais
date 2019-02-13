@@ -47,6 +47,32 @@
         }
 
 
+        .flag-icon-sk {
+            margin-left: 104rem;
+        }
+
+ .flag-icon-fr {
+     background-size: contain;
+     background-position: 50%;
+     background-repeat: no-repeat;
+
+ }
+        .col-md-4 {
+            margin-top: .9rem!important;
+        }
+
+        .col-md-12 {
+            margin-top: .9rem!important;
+        }
+
+        .dropdown-toggle::after {
+            border-top: .1em solid;
+        }
+
+        .btn {
+            margin-top: 0.5rem;
+        }
+
     </style>
 
 
@@ -55,6 +81,8 @@
 
 <form id="zaznam-form">
     <div id="zoznam-container" class="container">
+        <a class="flag-icon-sk "    href="localhost:8000/sk">___</a>
+        <a class="flag-icon-fr "   href="localhost:8000/fr/">___</a>
         <div class="row">
             <div class="col-md-4">
                 <label for="exampleInputEmail1">{{ 'translate.cislo_danu' | trans }}</label>
@@ -75,12 +103,12 @@
 
         <div class="row">
             <div class="col-md-4">
-                <label for="exampleInput">{{ 'translate.skuska_v_inom_zavode_text' | trans }}</label>
+                <label for="exampleInput" >{{ 'translate.skuska_v_inom_zavode_text' | trans }}</label>
                 <input class="form-control form-control"  name="skuska_v_inom_zavode_text" type="text" />
             </div>
             <div class="col-md-4">
                 <label for="exampleInput"></label>
-                <select class="selectpicker" name="skuska_v_inom_zavode_select[]" multiple="multiple" data-live="true"  data-width="100%" title="{{ 'translate.vyberte_si_z_moznosti' | trans }}">
+                <select class="selectpicker"  name="skuska_v_inom_zavode_select[]"  multiple="multiple" data-live="true"  data-width="100%" title="{{ 'translate.vyberte_si_z_moznosti' | trans }}">
                     <option  value="Velizy">Velizy</option>
                     <option  value="Mulhouse"> Mulhouse</option>
                     <option  value="Poissy">Poissy</option>
@@ -260,12 +288,12 @@
 
 
             <div class="row">
-                <div class="col-md-12">
-                    <label for="exampleInputEmail1">{{ 'translate.priebeh_skusky' | trans }}</label>
+                {#<div class="col-md-12">#}
+                    {#<label for="exampleInputEmail1">{{ 'translate.priebeh_skusky' | trans }}</label>#}
 
-                </div>
+                {#</div>#}
 
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <label for="exampleInputEmail1">{{ 'translate.pozadovany_pocet_aut' | trans }}</label>
                     <input class="form-control"  name="pozadovany_pocet_aut" type="number"  required=""  oninvalid="this.setCustomValidity('{{ 'translate.povinny_udaj' | trans }}')"  onchange="this.setCustomValidity('')" />
                 </div>

@@ -252,12 +252,12 @@ class Zaznam
     /**
      * @var Container
      */
-    private $container;
+//    private $container;
 
-    public function __construct(Container $container)
-    {
-        $this->container = $container;
-    }
+//    public function __construct(Container $container)
+//    {
+//        $this->container = $container;
+//    }
 
 
     public function getId(): ?int
