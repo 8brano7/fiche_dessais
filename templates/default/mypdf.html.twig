@@ -5517,6 +5517,11 @@
     <form id="zaznam-form">
         <div id="zoznam-container" class="container">
             <div class="row">
+                <div >
+                    <b><center>{{'translate.nadpisPDF' | trans }} {{ zaznam.id }}</center></b>
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-xs-4">
                     <label for="exampleInputEmail1">{{ 'translate.cislo_danu' | trans }}</label>
                     <input class="form-control form-control"   name="cislo_danu"   value="{{ zaznam.cisloDanu }}" />
