@@ -95,6 +95,17 @@ class DefaultController extends AbstractController
 
 
 
+    /**
+     * @Route(path="/{_locale}/skuska2/{zaznam}/", name="skuska2_action")
+     */
+    public function skuska2 (Zaznam $zaznam) {
+
+        return $this->render('default/skuska.html.twig', [
+            'zaznam' => $zaznam
+        ]);
+    }
+
+
 
 
 }
