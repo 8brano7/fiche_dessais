@@ -19,9 +19,7 @@ class DefaultController extends AbstractController
      * @Route(path="/", name="index_action")
      */
     public function home (EntityManagerInterface $em) {
-
         return $this->render('default/zoznam.html.twig');
-
     }
 
 
@@ -104,8 +102,5 @@ class DefaultController extends AbstractController
             'zaznam' => $zaznam
         ]);
     }
-
-
-
 
 }
