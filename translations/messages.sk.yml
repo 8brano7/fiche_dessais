@@ -1,6 +1,6 @@
 translate.cislo_danu: Číslo danu :
 translate.n_altis: N° altis :
-translate.skuska_v_inom_zavode_text: Skúška v inom závode :
+translate.skuska_v_inom_zavode: Skúška v inom závode :
 translate.cislo_predchadzajucej_skusky: Číslo predchádzajúcej skúšky :
 translate.nazov_dotknuteho_dielu: Názov dotknutého dielu :
 translate.oddelenie_ziadatela: Oddelenie žiadateľa :
@@ -33,7 +33,7 @@ translate.blokovat_auta_na_kontrolu: 4 - Je potrebné blokovať autá na kontrol
 translate.pocet_aut_realizovanych: Počet aut realizovaných :
 translate.skuska_jazda: Skúška/ Jazda
 translate.skuska_hluk: Hluk :
-translate.skuska_sprcha: Sprcha :
+translate.skuska_sprcha: Tropická sprcha :
 translate.skuska_iqf: IQF :
 translate.skuska_iqa: IQA :
 translate.skuska_ine: Autres :

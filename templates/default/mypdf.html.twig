@@ -43,10 +43,10 @@
         #zoznam-container {
             border: 1px solid #d2d2d2;
             border-radius: 2rem;
-            padding: 1.5rem;
+            padding: 5rem;
             /*margin-top: 1rem;*/
             margin-bottom: 1rem;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
 
         }
 
@@ -5516,9 +5516,9 @@
 
     <form id="zaznam-form">
         <div id="zoznam-container" class="container">
-            <div class="row">
+            {#<div class="row">#}
                 <div >
-                    <b><center>{{'translate.nadpisPDF' | trans }} {{ zaznam.id }}</center></b>
+                    <b> <center>{{'translate.nadpisPDF' | trans }} {{ zaznam.id }}</center></b>
                 </div>
             </div>
             <div class="row">
@@ -5537,11 +5537,11 @@
             </div>
             <div class="row">
                 <div class="col-xs-4">
-                    <label for="exampleInput">{{ 'translate.skuska_v_inom_zavode_text' | trans }}</label>
-                    <input class="form-control form-control"  name="skuska_v_inom_zavode_text" value="{{ zaznam.skuskaVInomZavodeText }}"/>
+                    <label for="exampleInput">{{ 'translate.skuska_v_inom_zavode' | trans }}</label>
+                    <input class="form-control form-control"  name="skuska_v_inom_zavode" value="{{ zaznam.skuskaVInomZavodearray }}"/>
                 </div>
                 <div class="col-xs-4">
-                    <label for="exampleInput">{{ 'translate.vyber' | trans }}</label>
+                    <label for="exampleInput">{{ 'translate.pozadovany_pocet_aut' | trans }}</label>
                     <input class="form-control"  name="pozadovany_pocet_aut" value="{{ zaznam.pozadovanyPocetAut }}" />
 
                 </div>
@@ -5575,7 +5575,7 @@
                         </div>
                         <div class="col-xs-4">
                             <label for="exampleInputEmail1">{{ 'translate.realizacia_skusky' | trans }}</label>
-                            <input class="form-control js-datepicker"  type="date" title="REALIZACIA_SKUSKY" name="realizacia_skusky" value="{{ zaznam.realizaciaSkusky | date('d/m/Y') }}" type="text"/>
+                            <input class="form-control js-datepicker"  type="text" title="REALIZACIA_SKUSKY" name="realizacia_skusky" value="{{ zaznam.realizaciaSkusky | date('d/m/Y') }}" type="text"/>
                         </div>
                         <div class="col-xs-4">
                             <label for="exampleInputEmail1">{{ 'translate.vozidla' | trans }}</label>
@@ -5621,7 +5621,7 @@
                         </div>
                         <div class="col-xs-4">
                             <label for="exampleInputEmail1">{{ 'translate.ingq' | trans }}</label>
-                            <input class="form-control"  name="pozadovany_pocet_aut"   value="{{ zaznam.iNGQArray }}" type="text"   />
+                            <input class="form-control"  name="inqq"   value="{{ zaznam.iNGQArray }}" type="text"   />
                         </div>
                     </div>
 
@@ -5665,7 +5665,7 @@
                 {{ zaznam.zmenaBezpecnostnehoSkrutkovania }}
                         </div>
 
-                        <div class="col-xs-12">
+                        <div class="col-xs-6">
                             <label for="exampleInputEmail1">{{ 'translate.zmena_pracovneho_postupu' | trans }}</label>
                            {{ zaznam.zmenaPracovnehoPostupu }}
                         </div>
@@ -5682,10 +5682,6 @@
 
                 {#</div>#}
 
-                <div class="col-xs-4">
-                    <label for="exampleInputEmail1">{{ 'translate.pozadovany_pocet_aut' | trans }}</label>
-                    <input class="form-control"  name="pozadovany_pocet_aut"   value="{{ zaznam.pozadovanyPocetAut }}" type="text"  />
-                </div>
 
                 <div class="col-xs-12">
                     <label for="exampleInputEmail1">{{ 'translate.dotknute_posty_na_montazi' | trans }}</label>
@@ -5707,30 +5703,30 @@
 
                 <div class="col-xs-4">
                     <label for="exampleInputEmail1">{{ 'translate.skuska_jazda' | trans }}</label>
-                    <input class="form-control form-control"  name="pocet_aut_realizovanych"  value="{{ zaznam.skuskaJazda }}" type="text" />
+                    <input class="form-control form-control"   value="{{ zaznam.skuskaJazda }}" type="text" />
                 </div>
                 <div class="col-xs-4">
                     <label for="exampleInputEmail1">{{ 'translate.skuska_iqf' | trans }}</label>
-                    <input class="form-control form-control"  name="pocet_aut_realizovanych" value="{{ zaznam.skuskaIqf }}" type="text" />
+                    <input class="form-control form-control" value="{{ zaznam.skuskaIqf }}" type="text" />
                 </div>
                 <div class="col-xs-4">
                     <label for="exampleInputEmail1">{{ 'translate.skuska_hluk' | trans }}</label>
-                    <input class="form-control form-control"  name="pocet_aut_realizovanych" value="{{ zaznam.skuskaHluk}}" type="text" />
+                    <input class="form-control form-control"  value="{{ zaznam.skuskaHluk}}" type="text" />
                 </div>
 
 
 
                 <div class="col-xs-4">
                     <label for="exampleInputEmail1">{{ 'translate.skuska_sprcha' | trans }}</label>
-                    <input class="form-control form-control"  name="pocet_aut_realizovanych" value="{{ zaznam.skuskaSprcha }}" type="text" />
+                    <input class="form-control form-control"  value="{{ zaznam.skuskaSprcha }}" type="text" />
                 </div>
                 <div class="col-xs-4">
                     <label for="exampleInputEmail1">{{ 'translate.skuska_iqa' | trans }}</label>
-                    <input class="form-control form-control"  name="pocet_aut_realizovanych" value="{{ zaznam.skuskaIqa }}" type="text"/>
+                    <input class="form-control form-control"  value="{{ zaznam.skuskaIqa }}" type="text"/>
                 </div>
                 <div class="col-xs-4">
                     <label for="exampleInputEmail1">{{ 'translate.skuska_ine' | trans }}</label>
-                    <input class="form-control form-control"  name="skuska_ine" value="{{ zaznam.skuskaIne }}" type="text" />
+                    <input class="form-control form-control"   value="{{ zaznam.skuskaIne }}" type="text" />
                 </div>
             </div>
 

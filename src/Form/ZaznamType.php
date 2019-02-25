@@ -17,29 +17,24 @@ class ZaznamType extends AbstractType
     public function buildForm ( FormBuilderInterface $builder , array $options )
     {
         $builder
-
             -> add('cislo_danu' ,TextType :: class )
             -> add('n_altis' ,TextType :: class )
             -> add('oddelenie_ziadatela' ,TextType :: class )
-            ->add('skuska_v_inom_zavode_select', ChoiceType::class, array('required' => false, "expanded" => true, 'multiple' => true, 'choices' => array (
+            ->add('skuska_v_inom_zavode', ChoiceType::class, array('required' => false, "expanded" => true, 'multiple' => true, 'choices' => array (
                 "Velizy" => "Velizy",
                 "Mulhouse"=> "Mulhouse",
                 "Poissy"=> "Poissy",  )))
-
-
-            -> add('skuska_v_inom_zavode_text' ,TextType :: class )
-            -> add('cislo_predchadzajucej_skusky' ,NumberType :: class )
+            -> add('cislo_predchadzajucej_skusky' ,Texttype :: class )
             -> add('nazov_dotknuteho_dielu' ,TextType :: class )
             -> add('ziadatel_skusky' ,TextType :: class )
             -> add('telefon' ,TextType :: class )
             ->add('datum_vyplnenia', DateType::class, ["widget"=>"single_text","format"=>"dd/MM/yyyy"])
             ->add('realizacia_skusky', DateType::class, ["widget"=>"single_text","format"=>"dd/MM/yyyy"])
-            -> add('referencia_dielu' ,NumberType :: class )
-            -> add('cislo_danu' ,NumberType :: class )
+            -> add('referencia_dielu' ,TextType :: class )
             -> add('miesto_spotreby_post' ,TextType :: class )
             -> add('dodavatel' ,TextType :: class )
-            -> add('mnozstvo' ,NumberType :: class )
-            -> add('cislo_pracovneho_postupu' ,NumberType :: class )
+            -> add('mnozstvo' ,TextType :: class )
+            -> add('cislo_pracovneho_postupu' ,TextType :: class )
             -> add('mnozstvo' ,NumberType :: class )
             ->add('ucastnici_skusky', ChoiceType::class, array('required' => false, "expanded" => true, 'multiple' => true, 'choices' => array (
                 "FER" => "FER",

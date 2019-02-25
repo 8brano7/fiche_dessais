@@ -21,7 +21,7 @@ class Zaznam
 
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="text", length=255, nullable=true)
      */
     private $cislo_danu;
 
@@ -37,18 +37,15 @@ class Zaznam
      */
     private $oddelenie_ziadatela;
 
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $skuska_v_inom_zavode_text;
+
 
     /**
      * @ORM\Column(type="simple_array", nullable=true)
      */
-    private $skuska_v_inom_zavode_select;
+    private $skuska_v_inom_zavode;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\Column(type="text", nullable=true)
      */
     private $cislo_predchadzajucej_skusky;
 
@@ -78,7 +75,7 @@ class Zaznam
     private $realizacia_skusky;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\Column(type="text", nullable=true)
      */
     private $referencia_dielu;
 
@@ -101,12 +98,12 @@ class Zaznam
     private $dodavatel;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\Column(type="text", nullable=true)
      */
     private $cislo_pracovneho_postupu;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="text")
      */
     private $mnozstvo;
 
@@ -123,7 +120,7 @@ class Zaznam
 
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=255)
      */
     private $dovod_skusky;
 
@@ -305,36 +302,25 @@ class Zaznam
         return $this;
     }
 
-    public function getSkuskaVInomZavodeText(): ?string
+
+    public function getSkuskaVInomZavode(): ?array
     {
-        return $this->skuska_v_inom_zavode_text;
+        return $this->skuska_v_inom_zavode;
     }
 
-    public function setSkuskaVInomZavodeText(?string $skuska_v_inom_zavode_text): self
+    public function setSkuskaVInomZavode(?array $skuska_v_inom_zavode): self
     {
-        $this->skuska_v_inom_zavode_text = $skuska_v_inom_zavode_text;
+        $this->skuska_v_inom_zavode = $skuska_v_inom_zavode;
 
         return $this;
     }
 
-    public function getSkuskaVInomZavodeSelect(): ?array
-    {
-        return $this->skuska_v_inom_zavode_select;
-    }
-
-    public function setSkuskaVInomZavodeSelect(?array $skuska_v_inom_zavode_select): self
-    {
-        $this->skuska_v_inom_zavode_select = $skuska_v_inom_zavode_select;
-
-        return $this;
-    }
-
-    public function getCisloPredchadzajucejSkusky(): ?int
+    public function getCisloPredchadzajucejSkusky(): ?string
     {
         return $this->cislo_predchadzajucej_skusky;
     }
 
-    public function setCisloPredchadzajucejSkusky(?int $cislo_predchadzajucej_skusky): self
+    public function setCisloPredchadzajucejSkusky(?string $cislo_predchadzajucej_skusky): self
     {
         $this->cislo_predchadzajucej_skusky = $cislo_predchadzajucej_skusky;
 
@@ -405,12 +391,12 @@ class Zaznam
         return $this;
     }
 
-    public function getReferenciaDielu(): ?int
+    public function getReferenciaDielu(): ?string
     {
         return $this->referencia_dielu;
     }
 
-    public function setReferenciaDielu(?int $referencia_dielu): self
+    public function setReferenciaDielu(?string $referencia_dielu): self
     {
         $this->referencia_dielu = $referencia_dielu;
 
@@ -456,24 +442,24 @@ class Zaznam
         return $this;
     }
 
-    public function getCisloPracovnehoPostupu(): ?int
+    public function getCisloPracovnehoPostupu(): ?string
     {
         return $this->cislo_pracovneho_postupu;
     }
 
-    public function setCisloPracovnehoPostupu(?int $cislo_pracovneho_postupu): self
+    public function setCisloPracovnehoPostupu(?string $cislo_pracovneho_postupu): self
     {
         $this->cislo_pracovneho_postupu = $cislo_pracovneho_postupu;
 
         return $this;
     }
 
-    public function getMnozstvo(): ?int
+    public function getMnozstvo(): ?string
     {
         return $this->mnozstvo;
     }
 
-    public function setMnozstvo(?int $mnozstvo): self
+    public function setMnozstvo(?string $mnozstvo): self
     {
         $this->mnozstvo = $mnozstvo;
 
@@ -827,6 +813,11 @@ class Zaznam
 
     public function getINGQArray () {
         return implode(", ",$this->getIngq());
+    }
+
+
+    public function getSkuskaVInomZavodearray () {
+        return implode(", ",$this->getSkuskaVInomZavode());
     }
 
 
