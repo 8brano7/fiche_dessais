@@ -3,6 +3,9 @@ namespace App\Controller;
 use App\Entity\DecPsa;
 use App\Entity\Zaznam;
 use App\Form\ZaznamType;
+use Swift_Mailer;
+use Swift_Message;
+use Swift_SmtpTransport;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request ;
@@ -37,34 +40,25 @@ class DefaultController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
                      /** @var UploadedFile  $file */
 
-          // funckia na nahravanie obrazka, v services som si definoval cestu kde to bude ukladat prostrednictvom upload_directory
-//            $file = $form->get('fotka')->getData();
-//
-//             $fileName = md5(uniqid()).'.'.$file->guessExtension();
-//             $file->move($this->getParameter('upload_directory'), $fileName);
-//             $zaznamData->setFotka($fileName);
-
             dump($form->get('fotka'));
-
-
-
-
             if (!empty($form->get('fotka'))) {
                 $file = $form->get('fotka')->getData();
                 if(!empty($file)) {
                     $fileName = md5(uniqid()).'.'.$file->guessExtension() ;
                     $file->move($this->getParameter('upload_directory'), $fileName);
                     $zaznamData->setFotka($fileName);
-
                 }
-             //   if ($form instanceof WhateverObject) {
 
-//                $fileName = md5(uniqid()).'.'.$file->guessExtension() ;
-//                $file->move($this->getParameter('upload_directory'), $fileName);
-//                $zaznamData->setFotka($fileName);
-               // }
-
-
+//                $zaznamData = (new Swift_SmtpTransport('smtp.gmail.com', 465))
+//                    ->setUsername('Brano')
+//                ;
+//                $mailer = new Swift_Mailer($zaznamData);
+//                $message = (new Swift_Message('Wonderful Subject'))
+//                    ->setFrom(['brano87@gmail.com' => 'berrr'])
+//                    ->setTo(['brano87@gmail.com', 'brano87@gmail.com' => 'dddd'])
+//                    ->setBody('asdsadsadsa')
+//                ;
+//                $em = $mailer->send($message);
 
             $em->persist($zaznamData);
             $em->flush();

@@ -1,45 +1,45 @@
-translate.cislo_danu: Číslo danu :
-translate.n_altis: N° altis :
-translate.skuska_v_inom_zavode: Skúška v inom závode :
-translate.cislo_predchadzajucej_skusky: Číslo predchádzajúcej skúšky :
-translate.nazov_dotknuteho_dielu: Názov dotknutého dielu :
-translate.oddelenie_ziadatela: Oddelenie žiadateľa :
-translate.ziadatel_skusky: Žiadateľ skúšky :
-translate.telefon: Telefón :
-translate.datum_vyplnenia: Dátum vyplnenia :
-translate.vozidla: Vozidla :
-translate.realizacia_skusky: Dátum a čas realizácie skúšky :
-translate.motorizacia: Motorizácia :
-translate.referencia_dielu: Referencia dielu  :
-translate.miesto_spotreby_post: Miesto spotreby / Post :
+translate.cislo_danu: Číslo danu:
+translate.n_altis: N° altis:
+translate.skuska_v_inom_zavode: Skúška v inom závode:
+translate.cislo_predchadzajucej_skusky: Číslo predchádzajúcej skúšky:
+translate.nazov_dotknuteho_dielu: Názov dotknutého dielu:
+translate.oddelenie_ziadatela: Oddelenie žiadateľa:
+translate.ziadatel_skusky: Žiadateľ skúšky:
+translate.telefon: Telefón:
+translate.datum_vyplnenia: Dátum vyplnenia:
+translate.vozidla: Vozidla:
+translate.realizacia_skusky: Dátum a čas realizácie skúšky:
+translate.motorizacia: Motorizácia:
+translate.referencia_dielu: Referencia dielu:
+translate.miesto_spotreby_post: Miesto spotreby / Post:
 translate.dodavatel: Dodavatel :
-translate.cislo_pracovneho_postupu: Číslo pracovného postupu :
-translate.mnozstvo: Množstvo :
-translate.ucastnici_skusky: Účastníci skúšky :
-translate.dovod_skusky: Dôvod skúšky :
-translate.zmena_oproti_seriovemu_stavu: Zmena oproti sériovému stavu :
-translate.zmena_sa_tyka: Zmena sa týka :
-translate.zmena_dielu: Dielu :
-translate.zmena_skrutkovania: Skrutkovania :
-translate.zmena_procesu: Procesu :
-translate.zmena_bezpecnostneho_skrutkovania: Bezpečnostného skrutkovania :
-translate.zmena_pracovneho_postupu: Pracovného postupu :
+translate.cislo_pracovneho_postupu: Číslo pracovného postupu:
+translate.mnozstvo: Množstvo:
+translate.ucastnici_skusky: Účastníci skúšky:
+translate.dovod_skusky: Dôvod skúšky:
+translate.zmena_oproti_seriovemu_stavu: Zmena oproti sériovému stavu:
+translate.zmena_sa_tyka: Zmena sa týka:
+translate.zmena_dielu: Dielu:
+translate.zmena_skrutkovania: Skrutkovania:
+translate.zmena_procesu: Procesu:
+translate.zmena_bezpecnostneho_skrutkovania: Bezpečnostného skrutkovania:
+translate.zmena_pracovneho_postupu: Pracovného postupu:
 translate.pripoj_foto_do_zalozky: Pripoj foto do záložky fotky
-translate.priebeh_skusky: Priebeh skúšky :
-translate.pozadovany_pocet_aut: Požadovaný počet aut :
-translate.dotknute_posty_na_montazi: 1 - Dotknuté posty na montáži :
-translate.pozadovane_kontroly: 2 - Požadované kontroly :
-translate.blokovat_auta_na_kontrolu: 4 - Je potrebné blokovať autá na kontrolu :
-translate.pocet_aut_realizovanych: Počet aut realizovaných :
+translate.priebeh_skusky: Priebeh skúšky:
+translate.pozadovany_pocet_aut: Požadovaný počet aut:
+translate.dotknute_posty_na_montazi: 1 - Dotknuté posty na montáži:
+translate.pozadovane_kontroly: 2 - Požadované kontroly:
+translate.blokovat_auta_na_kontrolu: 4 - Je potrebné blokovať autá na kontrolu:
+translate.pocet_aut_realizovanych: Počet aut realizovaných:
 translate.skuska_jazda: Skúška/ Jazda
-translate.skuska_hluk: Hluk :
-translate.skuska_sprcha: Tropická sprcha :
-translate.skuska_iqf: IQF :
-translate.skuska_iqa: IQA :
-translate.skuska_ine: Autres :
-translate.modernizacia_po_skuske: Modernizácia po skúške :
-translate.retus: Retuš :
-translate.ingq: INGQ :
+translate.skuska_hluk: Hluk:
+translate.skuska_sprcha: Tropická sprcha:
+translate.skuska_iqf: IQF:
+translate.skuska_iqa: IQA:
+translate.skuska_ine: Autres:
+translate.modernizacia_po_skuske: Modernizácia po skúške:
+translate.retus: Retuš:
+translate.ingq: INGQ:
 translate.submit: Potvrdiť výber
 translate.vyberte_si_z_moznosti: Vyberte si z možnosti
 translate.vyberte_si_jednu_z_moznosti: Vyberte si jednu z možnosti
