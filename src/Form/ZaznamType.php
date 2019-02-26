@@ -29,7 +29,7 @@ class ZaznamType extends AbstractType
             -> add('ziadatel_skusky' ,TextType :: class )
             -> add('telefon' ,TextType :: class )
             ->add('datum_vyplnenia', DateType::class, ["widget"=>"single_text","format"=>"dd/MM/yyyy"])
-            ->add('realizacia_skusky', DateType::class, ["widget"=>"single_text","format"=>"dd/MM/yyyy"])
+            ->add('realizacia_skusky', DateType::class, ["widget"=>"single_text","format"=>"dd/MM/yyyy/hh/mm/ss"])
             -> add('referencia_dielu' ,TextType :: class )
             -> add('miesto_spotreby_post' ,TextType :: class )
             -> add('dodavatel' ,TextType :: class )

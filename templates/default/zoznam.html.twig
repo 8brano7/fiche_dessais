@@ -7,6 +7,7 @@
 
 
 
+
     <style>
         .row.no-gutter {
             margin-left: 0;
@@ -66,7 +67,7 @@
         }
 
         .dropdown-toggle::after {
-            border-top: .1em solid;
+            border-top: 0.0em solid;
             /*border-left: -0.7em solid transparent;*/
         }
 
@@ -75,6 +76,7 @@
         /*.btn {*/
             /*margin-top: 0.5rem;*/
         /*}*/
+
 
     </style>
 
@@ -169,10 +171,15 @@
                    <label for="exampleInputEmail1">{{ 'translate.datum_vyplnenia' | trans }}</label>
                 <input class="form-control js-datepicker" id="datetimepicker"   type="date" name="datum_vyplnenia"  type="text"  />
             </div>
-            <div class="col-md-4">
-                   <label for="exampleInputEmail1">{{ 'translate.realizacia_skusky' | trans }}</label>
-                <input class="form-control js-datepicker"  type="date" title="REALIZACIA_SKUSKY" name="realizacia_skusky" value="" type="text"/>
-            </div>
+            {#<div class="col-md-4">#}
+                   {#<label for="exampleInputEmail1">{{ 'translate.realizacia_skusky' | trans }}</label>#}
+                {#<input class="form-control js-datepicker"  type="datetime-local" title="REALIZACIA_SKUSKY" name="realizacia_skusky" value="" type="text"/>#}
+            {#</div>#}
+
+                <div class="col-md-4">
+                <label for="exampleInputEmail1">{{ 'translate.realizacia_skusky' | trans }}</label>
+                <input class="form-control js-datetimepicker"  id='js-datetimepicker' title="REALIZACIA_SKUSKY" name="realizacia_skusky" value="" type="text"/>
+                </div>
                 <div class="col-md-4">
                     <label for="exampleInputEmail1">{{ 'translate.vozidla' | trans }}</label>
                     <select class="selectpicker" multiple="multiple" data-width="100%" title="{{ 'translate.vyberte_si_z_moznosti' | trans }} " name="vozidla[]"  required=""  oninvalid="this.setCustomValidity('{{ 'translate.povinny_udaj' | trans }}')"  onchange="this.setCustomValidity('')" >
@@ -270,7 +277,7 @@
 
             <div class="row">
                 <div class="col-md-12">
-                    <label for="exampleInputEmail1">{{ 'translate.zmena_sa_tyka' | trans }}</label>
+                    <label style="font-size: 1.6rem" for="exampleInputEmail1">{{ 'translate.zmena_sa_tyka' | trans }}</label>
                 </div>
 
                     <div class="col-md-3">
@@ -322,7 +329,7 @@
             <div class="row">
         <div class="col-md-12">
                     <label for="exampleInputEmail1">{{ 'translate.pripoj_foto_do_zalozky' | trans }} </label>
-            <span>(JPEG, PNG, GIF, max 500 KB)<br>
+            <span>(JPEG, PNG, GIF)<br>
                  <input type="file" name="fotka"><br>
             </span>
         </div>
@@ -443,7 +450,15 @@
     <script>
         $(document).ready(function() {
             $('.js-datepicker').datepicker();
+
+            $(".js-datetimepicker").datetimepicker({format: 'yyyy-mm-dd hh:ss'});
+
+
         });
+
+
+
+
     </script>
 
 

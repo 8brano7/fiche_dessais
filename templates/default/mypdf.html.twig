@@ -5514,9 +5514,7 @@
 
     </style>
 
-    <form id="zaznam-form">
         <div id="zoznam-container" class="container">
-            {#<div class="row">#}
                 <div >
                     <b> <center>{{'translate.nadpisPDF' | trans }} {{ zaznam.id }}</center></b>
                 </div>
@@ -5563,11 +5561,8 @@
                 </div>
             </div>
 
-
             <div class="row">
                 <div class="container">
-
-
                     <div class="row">
                         <div class="col-xs-4">
                             <label for="exampleInputEmail1">{{ 'translate.datum_vyplnenia' | trans }}</label>
@@ -5640,7 +5635,6 @@
                         </div>
                     </div>
 
-
                     <div class="row">
                         <div class="col-xs-12">
                             <label for="exampleInputEmail1">{{ 'translate.zmena_sa_tyka' | trans }}</label>
@@ -5654,7 +5648,6 @@
                             <label for="exampleInputEmail1">{{ 'translate.zmena_skrutkovania' | trans }}</label>
                     {{ zaznam.zmenaSkrutkovania }}
                         </div>
-
 
                         <div class="col-xs-6">
                             <label for="exampleInputEmail1">{{ 'translate.zmena_procesu' | trans }}</label>
@@ -5670,19 +5663,10 @@
                            {{ zaznam.zmenaPracovnehoPostupu }}
                         </div>
                     </div>
-
-
                 </div>
             </div>
 
-
             <div class="row">
-                {#<div class="col-xs-12">#}
-                    {#<label for="exampleInputEmail1">{{ 'translate.priebeh_skusky' | trans }}</label>#}
-
-                {#</div>#}
-
-
                 <div class="col-xs-12">
                     <label for="exampleInputEmail1">{{ 'translate.dotknute_posty_na_montazi' | trans }}</label>
                     <textarea id="textarea"  class="form-control"   name="dotknute_posty_na_montazi" cols="" rows="">{{ zaznam.dotknutePostyNaMontazi }}</textarea>
@@ -5698,7 +5682,6 @@
                     <label for="exampleInputEmail1">{{ 'translate.blokovat_auta_na_kontrolu' | trans }}  </label>
                     {{ zaznam.blokovatAutaNaKontrolu }}
                 </div>
-
 
 
                 <div class="col-xs-4">
@@ -5730,8 +5713,6 @@
                 </div>
             </div>
 
-
-
             <div class="row">
                 <div class="col-xs-4">
                     <label for="exampleInputEmail1">{{ 'translate.modernizacia_po_skuske' | trans }}</label>
@@ -5747,30 +5728,61 @@
                     <label for="exampleInputEmail1">{{ 'translate.pocet_aut_realizovanych' | trans }}</label>
                     <input class="form-control form-control"  name="pocet_aut_realizovanych" value="{{ zaznam.pocetAutRealizovanych }}" type="text" />
                 </div>
-
-
             </div>
-
-
-
-        </div>
-
-        </div>
-        </div>
-
-
-
-        <div class="col-xs-12">
-            <label for="exampleInputEmail1">{{ 'translate.nahrataFotka' | trans }}</label>
-        </div>
+             </div>
+                 </div>
+                    </div>
 
 
         {% if zaznam.fotka is not null %}
+            <div class="col-xs-12">
+                <label for="exampleInputEmail1">{{ 'translate.nahrataFotka' | trans }}</label>
+            </div>
+
             <tr class="">
                 <td>
                  <center>  <img src="{{ zaznam.fotka64 }}" alt="Fotka" />
                  </center>
                 </td>
             </tr>
+            <br>
         {% endif %}
-</form>
+
+        <br> <br>
+        <div id="zoznam-container" class="container">
+                <div >
+                    <b><center>{{ 'translate.vysledokSkusky' | trans }}</center></b>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-5">
+                    <label for="exampleInputEmail1">{{ 'translate.konecneRozhodnutie' | trans }}</label>
+                </div>
+
+                <div class="col-xs-2">
+                    <label for="exampleInputEmail1">{{ 'translate.dohoda' | trans }}</label>
+                    <input type="checkbox" name="zmena_skrutkovania">
+                </div>
+                <div class="col-xs-2">
+                    <label for="exampleInputEmail1">{{ 'translate.odmietnutie' | trans }}</label>
+                    <input type="checkbox" name="zmena_skrutkovania">
+                </div>
+
+                <div class="col-xs-2">
+                    <label for="exampleInputEmail1">{{ 'translate.zostatok' | trans }}</label>
+                    <input type="checkbox" name="zmena_skrutkovania">
+                </div>
+
+                <div class="col-xs-12">
+                    <textarea id="textarea" class="form-control" name="pozadovane_kontroly" cols="" rows="25"></textarea>
+                </div>
+                <div class="col-xs-12">
+                    <input class="form-control form-control" placeholder="{{ 'translate.datum' | trans }}"  name="skuska_ine" type="text" />
+                </div>
+
+            </div>
+        </div>
+    </form>
+
+
