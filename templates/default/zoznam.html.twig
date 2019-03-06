@@ -238,12 +238,12 @@
                     <label for="exampleInputEmail1">{{ 'translate.ucastnici_skusky' | trans }}</label>
                     <select class="selectpicker"  multiple data-live="true" data-width="100%" title="Vyberte si z možnosti" name="ucastnici_skusky[]"  required=""  oninvalid="this.setCustomValidity('{{ 'translate.povinny_udaj' | trans }}')"  onchange="this.setCustomValidity('')" >
                         <option></option>
-                        <option>FER</option>
-                        <option>PEI</option>
-                        <option>MON</option>
-                        <option>CMON</option>
-                        <option>QCP</option>
-                        <option>INGQ</option>
+                        <option value="cc">CC</option>
+                        <option value="cmon">CMON</option>
+                        <option value="dchm">DCHM</option>
+                        <option value="dsee">DSEE</option>
+                        <option value="fer">FER</option>
+                        <option value="meca">MECA</option>
 
                     </select>
                 </div>
@@ -419,25 +419,21 @@
                     <label for="exampleInputEmail1">{{ 'translate.pocet_aut_realizovanych' | trans }}</label>
                     <input class="form-control form-control"  name="pocet_aut_realizovanych"  oninvalid="this.setCustomValidity('{{ 'translate.zle_zadany_udaj' | trans }}')"  onchange="this.setCustomValidity('')" />
                 </div>
-
-
             </div>
-
-
-
         <br>
         <div class="col-md-12">
             <button id="home-submit-btn" class="btn btn-success" type="submit">{{ 'translate.submit' | trans }}</button>
+            {#{% for zaznamycc in cc  %}#}
+            {#{% dump (zaznamycc.emailArray)  %}#}
+            <a id="outlook-btn"    href="mailto:{{ ccStr }}?subject=Fiche essais PDF&body=http://localhost:8000/sk/20/pdf"></a>
+                {#{% endfor %}#}
+                {#<button   id="outlook-btn">Go to Outlook</button>#}
+            {#</a>#}
+            {#<button hidden id="home-submit-btn" onclick="location.href='mailto:vinoth@email.com';">Send Mail</button>#}
         </div>
-
-
-
-</div>
-
-    </div>
-    </div>
-
-
+            </div>
+                 </div>
+                     </div>
 </form>
 
 
@@ -446,20 +442,15 @@
 {% block javascripts %}
     {{ parent() }}
     <script src="{{ asset('js/app.js') }}"></script>
-
     <script>
         $(document).ready(function() {
             $('.js-datepicker').datepicker();
 
             $(".js-datetimepicker").datetimepicker({format: 'yyyy-mm-dd hh:ss'});
 
-
         });
-
-
-
-
     </script>
+
 
 
 {% endblock %}

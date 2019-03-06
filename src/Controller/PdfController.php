@@ -27,6 +27,7 @@ class PdfController extends Controller
 
             $filename = sprintf('specifications-%s.pdf', date('Y-m-d-hh-ss'));
 
+
             return new Response(
                 $this->get('knp_snappy.pdf')->getOutputFromHtml($html),
                 200,

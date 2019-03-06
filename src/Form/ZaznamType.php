@@ -37,12 +37,12 @@ class ZaznamType extends AbstractType
             -> add('cislo_pracovneho_postupu' ,TextType :: class )
             -> add('mnozstvo' ,NumberType :: class )
             ->add('ucastnici_skusky', ChoiceType::class, array('required' => false, "expanded" => true, 'multiple' => true, 'choices' => array (
-                "FER" => "FER",
-                "PEI"=> "PEI",
-                "MON"=> "MON",
-                "CMON"=> "CMON",
-                "QCP"=> "QCP",
-                "INGQ"=> "INGQ",)))
+                "cc" => "cc",
+                "cmon"=> "cmon",
+                "dchm"=> "dchm",
+                "dsee"=> "dsee",
+                "fer"=> "fer",
+                "meca"=> "meca",)))
             ->add('ingq', ChoiceType::class, array('required' => false, "expanded" => true, 'multiple' => true, 'choices' => array (
                 "Všetci" => "Všetci",
                 "MECA"=> "MECA",

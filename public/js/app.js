@@ -19,7 +19,16 @@ $(document).ready(function () {
             type: 'POST'
             // vrati ak je vsetko OK
         }).done(function (data) {
+
             alert(data.msg);
+            console.log(data.mail);
+
+            $('#outlook-btn').attr('href', data.mail);
+
+            $('#outlook-btn')[0].click(function(){
+            });
+
+            // $('#outlook-btn').trigger("click");
             // vrati ak je chyba - je to definovane aj v kontroleri
         }).fail(function (data) {
             alert(data.msg);
@@ -29,9 +38,16 @@ $(document).ready(function () {
 
 
 
+    //
+    // function formAutoSubmit () {
+    //     var frm = document.getElementById("outlook-btn");
+    //     frm.submit();
+    // }
+    // window.onload = formAutoSubmit;
 
 
-    $('select').selectpicker();
+    //
+    // $('select').selectpicker();
 
 
 

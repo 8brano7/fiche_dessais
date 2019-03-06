@@ -808,7 +808,7 @@ class Zaznam
     }
 
     public function getUcastniciSkuskyArray () {
-        return implode(", ",$this->getUcastniciSkusky());
+        $this->getUcastniciSkusky();
     }
 
     public function getINGQArray () {

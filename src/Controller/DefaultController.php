@@ -1,6 +1,7 @@
 <?php
 namespace App\Controller;
 use App\Entity\DecPsa;
+use App\Entity\Oddelenia;
 use App\Entity\Zaznam;
 use App\Form\ZaznamType;
 use Swift_Mailer;
@@ -22,9 +23,52 @@ class DefaultController extends AbstractController
      * @Route(path="/", name="index_action")
      */
     public function home (EntityManagerInterface $em) {
+        /** @var Oddelenia[] $oddelenia */
+        $oddelenia= $em -> getRepository(Oddelenia::class)->findBy([
+            'oddelenie' => 'cc'
+        ]);
+        $ccArr = [];
+        foreach ($oddelenia as $ccObj) {
+            $ccArr[] = $ccObj->getEmail();
+        }
+
+        $ccStr = implode(",", $ccArr);
+
         /** @var Zaznam[] $zaznam */
-        return $this->render('default/zoznam.html.twig');
+//        $zaznam= $em -> getRepository(Zaznam::class)->findAll();
+//        $zaznam = $em -> getRepository(Zaznam::class )->find('id');
+
+        return $this->render('default/zoznam.html.twig', [
+            'ccStr' => $ccStr,
+
+        ]);
     }
+
+
+//    /**
+//     * @Route(path="/", name="index_action")
+//     */
+//    public function home (EntityManagerInterface $em) {
+//        /** @var Cc[] $cc */
+//        $cc= $em -> getRepository(Cc::class)->findAll();
+//        $ccArr = [];
+//        foreach ($cc as $ccObj) {
+//            $ccArr[] = $ccObj->getEmail();
+//        }
+//
+//        $ccStr = implode(",", $ccArr);
+//
+//        /** @var Zaznam[] $zaznam */
+////        $zaznam= $em -> getRepository(Zaznam::class)->findAll();
+//        $zaznam = $em -> getRepository(Zaznam::class )->find('id');
+//
+//        return $this->render('default/zoznam.html.twig', [
+//            'cc' => $cc,
+//            'ccStr' => $ccStr,
+//
+//        ]);
+//    }
+//
 
 
 
@@ -38,9 +82,7 @@ class DefaultController extends AbstractController
         $form = $this->createForm(ZaznamType::class, $zaznamData);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-                     /** @var UploadedFile  $file */
-
-            dump($form->get('fotka'));
+             /** @var UploadedFile  $file */
             if (!empty($form->get('fotka'))) {
                 $file = $form->get('fotka')->getData();
                 if(!empty($file)) {
@@ -49,26 +91,28 @@ class DefaultController extends AbstractController
                     $zaznamData->setFotka($fileName);
                 }
 
-//                $zaznamData = (new Swift_SmtpTransport('smtp.gmail.com', 465))
-//                    ->setUsername('Brano')
-//                ;
-//                $mailer = new Swift_Mailer($zaznamData);
-//                $message = (new Swift_Message('Wonderful Subject'))
-//                    ->setFrom(['brano87@gmail.com' => 'berrr'])
-//                    ->setTo(['brano87@gmail.com', 'brano87@gmail.com' => 'dddd'])
-//                    ->setBody('asdsadsadsa')
-//                ;
-//                $em = $mailer->send($message);
 
             $em->persist($zaznamData);
             $em->flush();
-
             }
 
+            $id = $zaznamData->getId();
+            $locale = $request->getLocale();
 
+            $ucastnici = $zaznamData->getUcastniciSkuskyArray();
+            $ucastnici[] = "cc";
 
+            /** @var Oddelenia[] $oddelenia */
+            $oddelenia = $em->getRepository(Oddelenia::class)->findBy(['oddelenie' => $ucastnici]);
+            $mailyArr = [];
+            foreach ($oddelenia as $oddelenie) {
+                $mailyArr[] = $oddelenie->getEmail();
+            }
 
-            return new JsonResponse(['msg' => 'Nahrate'], Response::HTTP_OK);
+            $maily = implode(',', $mailyArr);
+            $mail = "mailto:".$maily."?subject=Fiche essais PDF&body=http://localhost:8000/".$locale."/".$id."/pdf";
+
+            return new JsonResponse(['msg' => 'Nahrate', 'mail' => $mail,], Response::HTTP_OK);
         }
         return new JsonResponse(['msg' => 'Doslo k chybe'], Response::HTTP_BAD_REQUEST);
 
@@ -97,5 +141,9 @@ class DefaultController extends AbstractController
             'zaznam' => $zaznam
         ]);
     }
+
+
+
+
 
 }
