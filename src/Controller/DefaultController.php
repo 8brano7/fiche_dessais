@@ -99,7 +99,7 @@ class DefaultController extends AbstractController
             $id = $zaznamData->getId();
             $locale = $request->getLocale();
 
-            $ucastnici = $zaznamData->getUcastniciSkuskyArray();
+            $ucastnici = $zaznamData->getUcastniciSkusky();
             $ucastnici[] = "cc";
 
             /** @var Oddelenia[] $oddelenia */

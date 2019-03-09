@@ -169,7 +169,7 @@
             <div class="row">
             <div class="col-md-4">
                    <label for="exampleInputEmail1">{{ 'translate.datum_vyplnenia' | trans }}</label>
-                <input class="form-control js-datepicker" id="datetimepicker"   type="date" name="datum_vyplnenia"  type="text"  />
+                <input class="form-control js-datepicker" id="datepicker"   type="date" name="datum_vyplnenia"  type="text"  />
             </div>
             {#<div class="col-md-4">#}
                    {#<label for="exampleInputEmail1">{{ 'translate.realizacia_skusky' | trans }}</label>#}
@@ -178,7 +178,7 @@
 
                 <div class="col-md-4">
                 <label for="exampleInputEmail1">{{ 'translate.realizacia_skusky' | trans }}</label>
-                <input class="form-control js-datetimepicker"  id='js-datetimepicker' title="REALIZACIA_SKUSKY" name="realizacia_skusky" value="" type="text"/>
+                <input class="form-control form_datetime"   id='form_datetime' title="REALIZACIA_SKUSKY"  name="realizacia_skusky" value="" type="text"/>
                 </div>
                 <div class="col-md-4">
                     <label for="exampleInputEmail1">{{ 'translate.vozidla' | trans }}</label>
@@ -236,9 +236,9 @@
 
                 <div class="col-md-4">
                     <label for="exampleInputEmail1">{{ 'translate.ucastnici_skusky' | trans }}</label>
-                    <select class="selectpicker"  multiple data-live="true" data-width="100%" title="Vyberte si z možnosti" name="ucastnici_skusky[]"  required=""  oninvalid="this.setCustomValidity('{{ 'translate.povinny_udaj' | trans }}')"  onchange="this.setCustomValidity('')" >
+                    <select class="selectpicker"  multiple data-live="true" data-width="100%" title="Vyberte si z možnosti" name="ucastnici_skusky[]"   oninvalid="this.setCustomValidity('{{ 'translate.povinny_udaj' | trans }}')"  onchange="this.setCustomValidity('')" >
                         <option></option>
-                        <option value="cc">CC</option>
+                        <option disabled value="cc">CC</option>
                         <option value="cmon">CMON</option>
                         <option value="dchm">DCHM</option>
                         <option value="dsee">DSEE</option>
@@ -446,11 +446,13 @@
         $(document).ready(function() {
             $('.js-datepicker').datepicker();
 
-            $(".js-datetimepicker").datetimepicker({format: 'yyyy-mm-dd hh:ss'});
-
         });
-    </script>
 
+        $(".form_datetime").datetimepicker({
+            format: "dd MM yyyy - hh:ii"
+        });
+
+    </script>
 
 
 {% endblock %}
