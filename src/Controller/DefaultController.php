@@ -22,55 +22,9 @@ class DefaultController extends AbstractController
     /**
      * @Route(path="/", name="index_action")
      */
-    public function home (EntityManagerInterface $em) {
-        /** @var Oddelenia[] $oddelenia */
-        $oddelenia= $em -> getRepository(Oddelenia::class)->findBy([
-            'oddelenie' => 'cc'
-        ]);
-        $ccArr = [];
-        foreach ($oddelenia as $ccObj) {
-            $ccArr[] = $ccObj->getEmail();
-        }
-
-        $ccStr = implode(",", $ccArr);
-
-        /** @var Zaznam[] $zaznam */
-//        $zaznam= $em -> getRepository(Zaznam::class)->findAll();
-//        $zaznam = $em -> getRepository(Zaznam::class )->find('id');
-
-        return $this->render('default/zoznam.html.twig', [
-            'ccStr' => $ccStr,
-
-        ]);
+    public function home () {
+        return $this->render('default/zoznam.html.twig');
     }
-
-
-//    /**
-//     * @Route(path="/", name="index_action")
-//     */
-//    public function home (EntityManagerInterface $em) {
-//        /** @var Cc[] $cc */
-//        $cc= $em -> getRepository(Cc::class)->findAll();
-//        $ccArr = [];
-//        foreach ($cc as $ccObj) {
-//            $ccArr[] = $ccObj->getEmail();
-//        }
-//
-//        $ccStr = implode(",", $ccArr);
-//
-//        /** @var Zaznam[] $zaznam */
-////        $zaznam= $em -> getRepository(Zaznam::class)->findAll();
-//        $zaznam = $em -> getRepository(Zaznam::class )->find('id');
-//
-//        return $this->render('default/zoznam.html.twig', [
-//            'cc' => $cc,
-//            'ccStr' => $ccStr,
-//
-//        ]);
-//    }
-//
-
-
 
 
     /**

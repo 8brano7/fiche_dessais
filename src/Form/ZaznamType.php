@@ -29,7 +29,7 @@ class ZaznamType extends AbstractType
             -> add('ziadatel_skusky' ,TextType :: class )
             -> add('telefon' ,TextType :: class )
             ->add('datum_vyplnenia', DateType::class, ["widget"=>"single_text","format"=>"dd/MM/yyyy"])
-            ->add('realizacia_skusky', DateType::class, ["widget"=>"single_text","format"=>"dd/MM/yyyy/hh/mm/ss"])
+            ->add('realizacia_skusky', DateType::class, ["widget"=>"single_text","format"=>"dd/MM/yyyy hh:mm"])
             -> add('referencia_dielu' ,TextType :: class )
             -> add('miesto_spotreby_post' ,TextType :: class )
             -> add('dodavatel' ,TextType :: class )
@@ -70,7 +70,6 @@ class ZaznamType extends AbstractType
             -> add('skuska_ine' ,TextType :: class )
             -> add('retus' ,TextType :: class )
             -> add('modernizacia_po_skuske' ,TextType :: class )
-            ->add('realizacia_skusky', DateType::class, ["widget"=>"single_text","format"=>"dd-MM-yyyy"])
             ->add('motorizacia', ChoiceType::class, array('required' => false, "expanded" => true, 'multiple' => true, 'choices' => array (
                 "Všetky typy" => "Všetky typy",
                 "TT Essence / benzín"=> "TT Essence / benzín",

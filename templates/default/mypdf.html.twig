@@ -5566,11 +5566,11 @@
                     <div class="row">
                         <div class="col-xs-4">
                             <label for="exampleInputEmail1">{{ 'translate.datum_vyplnenia' | trans }}</label>
-                            <input class="form-control js-datepicker" id="datetimepicker"  value="{{ zaznam.datumVyplnenia| date('d/m/Y') }}" name="datum_vyplnenia"  type="text"/>
+                            <input class="form-control js-datepicker" id="datetimepicker"  value="{{ zaznam.datumVyplnenia| date('m/d/Y') }}" name="datum_vyplnenia"  type="text"/>
                         </div>
                         <div class="col-xs-4">
                             <label for="exampleInputEmail1">{{ 'translate.realizacia_skusky' | trans }}</label>
-                            <input class="form-control js-datepicker"  type="text" title="REALIZACIA_SKUSKY" name="realizacia_skusky" value="{{ zaznam.realizaciaSkusky | date('d/m/Y') }}" type="text"/>
+                            <input class="form-control js-datepicker"  type="text" title="REALIZACIA_SKUSKY" name="realizacia_skusky" value="{{ zaznam.realizaciaSkusky | date('m/d/Y h:s') }}" type="text"/>
                         </div>
                         <div class="col-xs-4">
                             <label for="exampleInputEmail1">{{ 'translate.vozidla' | trans }}</label>

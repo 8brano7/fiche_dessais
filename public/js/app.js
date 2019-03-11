@@ -36,19 +36,10 @@ $(document).ready(function () {
     });
 
 
-
-
-    //
-    // function formAutoSubmit () {
-    //     var frm = document.getElementById("outlook-btn");
-    //     frm.submit();
-    // }
-    // window.onload = formAutoSubmit;
-
-
-    //
     $('select').selectpicker();
-
+    $('.js-datepicker').datetimepicker({format: 'DD/MM/YYYY'});
+    //YYYY-MM-DD HH:mm
+    $('.datetimepicker').datetimepicker({format: 'DD/MM/YYYY HH:mm'});
 
 
 })

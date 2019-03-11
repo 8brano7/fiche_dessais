@@ -178,7 +178,7 @@
 
                 <div class="col-md-4">
                 <label for="exampleInputEmail1">{{ 'translate.realizacia_skusky' | trans }}</label>
-                <input class="form-control form_datetime"   id='form_datetime' title="REALIZACIA_SKUSKY"  name="realizacia_skusky" value="" type="text"/>
+                <input class="form-control datetimepicker"   id='datetimepicker'  name="realizacia_skusky"  type="date"/>
                 </div>
                 <div class="col-md-4">
                     <label for="exampleInputEmail1">{{ 'translate.vozidla' | trans }}</label>
@@ -423,13 +423,7 @@
         <br>
         <div class="col-md-12">
             <button id="home-submit-btn" class="btn btn-success" type="submit">{{ 'translate.submit' | trans }}</button>
-            {#{% for zaznamycc in cc  %}#}
-            {#{% dump (zaznamycc.emailArray)  %}#}
-            <a id="outlook-btn"    href="mailto:{{ ccStr }}?subject=Fiche essais PDF&body=http://localhost:8000/sk/20/pdf"></a>
-                {#{% endfor %}#}
-                {#<button   id="outlook-btn">Go to Outlook</button>#}
-            {#</a>#}
-            {#<button hidden id="home-submit-btn" onclick="location.href='mailto:vinoth@email.com';">Send Mail</button>#}
+            <a id="outlook-btn"    href="mailto:"></a>
         </div>
             </div>
                  </div>
@@ -444,15 +438,13 @@
     <script src="{{ asset('js/app.js') }}"></script>
     <script>
         $(document).ready(function() {
-            $('.js-datepicker').datepicker();
+            // $('.js-datepicker').datepicker();
 
-        });
 
-        $(".form_datetime").datetimepicker({
-            format: "dd MM yyyy - hh:ii"
         });
 
     </script>
+
 
 
 {% endblock %}
