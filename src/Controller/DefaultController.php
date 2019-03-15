@@ -27,10 +27,10 @@ class DefaultController extends AbstractController
     }
 
 
-    /**
-     * @Route(path="/zaznam_form", methods={"POST"},name="home_upload")
-     * @param Request $request
-     */
+//    /**
+//     * @Route(path="/zaznam_form", methods={"POST"},name="home_upload")
+//     * @param Request $request
+//     */
     public function home_Action (Request $request, EntityManagerInterface $em) {
         $zaznamData = new Zaznam();
         $form = $this->createForm(ZaznamType::class, $zaznamData);
@@ -52,6 +52,7 @@ class DefaultController extends AbstractController
 
             $id = $zaznamData->getId();
             $locale = $request->getLocale();
+            dump($locale);
 
             $ucastnici = $zaznamData->getUcastniciSkusky();
             $ucastnici[] = "cc";

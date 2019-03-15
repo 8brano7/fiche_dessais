@@ -1,3 +1,17 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+
+home :
+  path :       /{_locale}
+  controller : App\Controller\DefaultController::home
+  requirements :
+    _locale : sk|fr
+
+
+home_upload :
+  path :       /{_locale}/zaznam_form
+  controller : App\Controller\DefaultController::home_Action
+  methods:    POST
+  requirements :
+    _locale : sk|fr

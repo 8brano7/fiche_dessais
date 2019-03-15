@@ -10,9 +10,11 @@ $(document).ready(function () {
 
         //  console.log(zaznamId);
         console.log('/zaznam_form/');
+        var locale = $('#zaznam-form').data('my-locale');
+        var url = `/${locale}/zaznam_form`;
 
         $.ajax({
-            url: ('/zaznam_form'),
+            url: url,
             data: formData,
             processData: false,
             contentType: false,
