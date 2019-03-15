@@ -5514,9 +5514,9 @@
 
     </style>
 
-        <div id="zoznam-container" class="container">
+        <div id="zoznam-container" class="container" style="padding: 2.5rem">
                 <div >
-                    <b> <center>{{'translate.nadpisPDF' | trans }} {{ zaznam.id }}</center></b>
+                     <center><h1 style="font-size: 2rem"><b>Fiche d'essai / {{'translate.nadpisPDF1' | trans }} {{ zaznam.nazovSkusky }} / {{'translate.nadpisPDF2' | trans }} {{ zaznam.id }}</b></h1></center>
                 </div>
             </div>
             <div class="row">
@@ -5544,8 +5544,8 @@
 
                 </div>
                 <div class="col-xs-4">
-                    <label for="exampleInputEmail1">{{ 'translate.nazov_dotknuteho_dielu' | trans }}</label>
-                    <input class="form-control form-control" value="{{ zaznam.nazovDotknutehoDielu }}"  name="nazov_dotknuteho_dielu" type="text"/>
+                    <label for="exampleInputEmail1">{{ 'translate.ucastnici_skusky' | trans }}</label>
+                    <input class="form-control form-control" value="{{ zaznam.ucastniciSkuskyText }}"   type="text"/>
                 </div>
                 <div class="col-xs-4">
                     <label for="exampleInputEmail1">{{ 'translate.oddelenie_ziadatela' | trans }}</label>
@@ -5605,14 +5605,14 @@
                             <input class="form-control form-control"  name="cislo_pracovneho_postupu" value="{{ zaznam.cisloPracovnehoPostupu }}" type="text" />
                         </div>
                         <div class="col-xs-4">
-                            <label for="exampleInputEmail1">{{ 'translate.mnozstvo' | trans }}</label>
-                            <input class="form-control form-control" title="MNOZSTVO " name="mnozstvo" value="{{ zaznam.mnozstvo }}" type="text"  />
+                            <label for="exampleInputEmail1">{{ 'translate.mnozstvo_dielov' | trans }}</label>
+                            <input class="form-control form-control"  name="mnozstvo_dielov" value="{{ zaznam.mnozstvoDielov }}" type="text"  />
                         </div>
 
 
                         <div class="col-xs-4">
-                            <label for="exampleInputEmail1">{{ 'translate.ucastnici_skusky' | trans }}</label>
-                            <input class="form-control"  name="ucastnici_skusky" value="{{ zaznam.ucastniciSkuskyText }}" />
+                            <label hidden="true" for="exampleInputEmail1">{{ 'translate.ucastnici_skusky' | trans }}</label>
+                            {#<input hidden="true" class="form-control"  name="ucastnici_skusky" value="{{ zaznam.ucastniciSkuskyText }}" />#}
                         </div>
                         <div class="col-xs-4">
                             <label for="exampleInputEmail1">{{ 'translate.ingq' | trans }}</label>
@@ -5736,7 +5736,7 @@
 
         {% if zaznam.fotka is not null %}
             <div class="col-xs-12">
-                <label for="exampleInputEmail1">{{ 'translate.nahrataFotka' | trans }}</label>
+                <label for="exampleInputEmail1"><h2 style="font-size: 1.8rem!important;"><b>{{ 'translate.nahrataFotka' | trans }}</b></h2></label>
             </div>
 
             <tr class="">
@@ -5749,13 +5749,14 @@
         {% endif %}
 
         <br> <br>
-        <div id="zoznam-container" class="container">
-                <div >
-                    <b><center>{{ 'translate.vysledokSkusky' | trans }}</center></b>
-                </div>
-            </div>
+    <div class="col-xs-12">
+        <label for="exampleInputEmail1"><b><h3 style="font-size: 1.8rem!important;"><b>{{ 'translate.vysledokSkusky' | trans }}</b></h3></b></label>
+    </div>
 
             <div class="row">
+                <div class="col-xs-1">
+                    <label  hidden for="exampleInputEmail1">{{ 'translate.konecneRozhodnutie' | trans }}</label>
+                </div>
                 <div class="col-xs-5">
                     <label for="exampleInputEmail1">{{ 'translate.konecneRozhodnutie' | trans }}</label>
                 </div>

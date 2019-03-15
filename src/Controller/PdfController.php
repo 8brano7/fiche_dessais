@@ -16,11 +16,12 @@ class PdfController extends Controller
 
 
     /**
-     * @Route(path="/{_locale}/{zaznam}/pdf", name="pdf_action2")
+     * @Route(path="/{_locale}/{nazov}/{zaznam}/pdf", name="pdf_action2")
      *
      * @return Response
      */
     public function pdfAction2(Zaznam $zaznam) {
+           $nazov = $zaznam->getNazovSkusky();
             $html = $this->renderView('default/mypdf.html.twig', [
                 'zaznam' => $zaznam
             ]);

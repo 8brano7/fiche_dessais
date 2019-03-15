@@ -2,7 +2,7 @@ translate.cislo_danu: Číslo danu:
 translate.n_altis: N° altis:
 translate.skuska_v_inom_zavode: Skúška v inom závode:
 translate.cislo_predchadzajucej_skusky: Číslo predchádzajúcej skúšky:
-translate.nazov_dotknuteho_dielu: Názov dotknutého dielu:
+translate.nazov_skusky: Názov skúšky:
 translate.oddelenie_ziadatela: Oddelenie žiadateľa:
 translate.ziadatel_skusky: Žiadateľ skúšky:
 translate.telefon: Telefón:
@@ -12,9 +12,9 @@ translate.realizacia_skusky: Dátum a čas realizácie skúšky:
 translate.motorizacia: Motorizácia:
 translate.referencia_dielu: Referencia dielu:
 translate.miesto_spotreby_post: Miesto spotreby / Post:
-translate.dodavatel: Dodavatel :
+translate.dodavatel: Dodavatel:
 translate.cislo_pracovneho_postupu: Číslo pracovného postupu:
-translate.mnozstvo: Množstvo:
+translate.mnozstvo_dielov: Množstvo dielov:
 translate.ucastnici_skusky: Účastníci skúšky:
 translate.dovod_skusky: Dôvod skúšky:
 translate.zmena_oproti_seriovemu_stavu: Zmena oproti sériovému stavu:
@@ -30,7 +30,7 @@ translate.pozadovany_pocet_aut: Požadovaný počet aut:
 translate.dotknute_posty_na_montazi: 1 - Dotknuté posty na montáži:
 translate.pozadovane_kontroly: 2 - Požadované kontroly:
 translate.blokovat_auta_na_kontrolu: 4 - Je potrebné blokovať autá na kontrolu:
-translate.pocet_aut_realizovanych: Počet aut realizovaných:
+translate.pocet_aut_realizovanych: Počet realizovaných áut:
 translate.skuska_jazda: Skúška/ Jazda
 translate.skuska_hluk: Hluk:
 translate.skuska_sprcha: Tropická sprcha:
@@ -40,7 +40,7 @@ translate.skuska_ine: Autres:
 translate.modernizacia_po_skuske: Modernizácia po skúške:
 translate.retus: Retuš:
 translate.ingq: INGQ:
-translate.submit: Potvrdiť výber
+translate.submit: Odoslať vyplnený formulár
 translate.vyberte_si_z_moznosti: Vyberte si z možnosti
 translate.vyberte_si_jednu_z_moznosti: Vyberte si jednu z možnosti
 translate.vsetky_typy: Všetky typy
@@ -54,7 +54,10 @@ translate.nie: Nie
 
 translate.nahrataFotka: Nahratá fotka:
 translate.vyber: Výber:
-translate.nadpisPDF: Fiche Essais - skúška číslo:
+
+
+translate.nadpisPDF1: názov skúšky:
+translate.nadpisPDF2: číslo:
 
 translate.vysledokSkusky: Výsledok skúšky:
 translate.konecneRozhodnutie: Konečné rozhodnutie skúšobnej komisie:
@@ -64,3 +67,5 @@ translate.zostatok: Uzavrieť:
 translate.datum: Dátum:
 translate.my_locale: sk
 
+translate.upozornenie_nadpis: Upozornenie
+translate.upozornenie_text: Po stlačení tlačidla odoslať sa vygeneruje FDE do PDF a otvorí sa Outlook s odkazom na PDF. Ďalšie úpravy formulára nebudú po odoslaní možné, na opravu treba vyplniť nový formulár a odoslať.

@@ -23,6 +23,7 @@ class DefaultController extends AbstractController
      * @Route(path="/", name="index_action")
      */
     public function home () {
+
         return $this->render('default/zoznam.html.twig');
     }
 
@@ -52,6 +53,7 @@ class DefaultController extends AbstractController
 
             $id = $zaznamData->getId();
             $locale = $request->getLocale();
+            $nazov = $zaznamData->getNazovSkusky();
             dump($locale);
 
             $ucastnici = $zaznamData->getUcastniciSkusky();
@@ -64,8 +66,8 @@ class DefaultController extends AbstractController
                 $mailyArr[] = $oddelenie->getEmail();
             }
 
-            $maily = implode(',', $mailyArr);
-            $mail = "mailto:".$maily."?subject=Fiche essais PDF&body=http://localhost:8000/".$locale."/".$id."/pdf";
+            $maily = implode(';', $mailyArr);
+            $mail = "mailto:".$maily."?subject=Fiche d'essai/ ".$nazov."&body=http://localhost:8000/".$locale."/".$nazov."/".$id."/pdf";
 
             return new JsonResponse(['msg' => 'Nahrate', 'mail' => $mail,], Response::HTTP_OK);
         }

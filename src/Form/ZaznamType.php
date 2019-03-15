@@ -25,7 +25,7 @@ class ZaznamType extends AbstractType
                 "Mulhouse"=> "Mulhouse",
                 "Poissy"=> "Poissy",  )))
             -> add('cislo_predchadzajucej_skusky' ,Texttype :: class )
-            -> add('nazov_dotknuteho_dielu' ,TextType :: class )
+            -> add('nazov_skusky' ,TextType :: class )
             -> add('ziadatel_skusky' ,TextType :: class )
             -> add('telefon' ,TextType :: class )
             ->add('datum_vyplnenia', DateType::class, ["widget"=>"single_text","format"=>"dd/MM/yyyy"])
@@ -33,9 +33,9 @@ class ZaznamType extends AbstractType
             -> add('referencia_dielu' ,TextType :: class )
             -> add('miesto_spotreby_post' ,TextType :: class )
             -> add('dodavatel' ,TextType :: class )
-            -> add('mnozstvo' ,TextType :: class )
+            -> add('mnozstvo_dielov' ,TextType :: class )
             -> add('cislo_pracovneho_postupu' ,TextType :: class )
-            -> add('mnozstvo' ,NumberType :: class )
+//            -> add('mnozstvo' ,NumberType :: class )
             ->add('ucastnici_skusky', ChoiceType::class, array('required' => false, "expanded" => true, 'multiple' => true, 'choices' => array (
                 "cc" => "cc",
                 "cmon"=> "cmon",
@@ -44,11 +44,9 @@ class ZaznamType extends AbstractType
                 "fer"=> "fer",
                 "meca"=> "meca",)))
             ->add('ingq', ChoiceType::class, array('required' => false, "expanded" => true, 'multiple' => true, 'choices' => array (
-                "Všetci" => "Všetci",
                 "MECA"=> "MECA",
                 "DSEE"=> "DSEE",
                 "DCHM"=> "DCHM",)))
-
             -> add('zmena_dielu' ,TextType :: class )
             -> add('zmena_bezpecnostneho_skrutkovania' ,TextType :: class )
             -> add('zmena_procesu' ,TextType :: class )
@@ -71,19 +69,14 @@ class ZaznamType extends AbstractType
             -> add('retus' ,TextType :: class )
             -> add('modernizacia_po_skuske' ,TextType :: class )
             ->add('motorizacia', ChoiceType::class, array('required' => false, "expanded" => true, 'multiple' => true, 'choices' => array (
-                "Všetky typy" => "Všetky typy",
                 "TT Essence / benzín"=> "TT Essence / benzín",
                 "TT Diesel"=> "TT Diesel",)))
             ->add('vozidla', ChoiceType::class, array('required' => false, "expanded" => true, 'multiple' => true, 'choices' => array (
-                "Všetky typy" => "Všetky typy",
                 "B6"=> "B6",
                 "P21"=> "P21",
                 "A9"=> "A9",
-                "A58/A9"=> "A58/A9",
-                "A9 VU"=> "A9 VU",
-                "A9 Auto école"=> "A9 Auto école",
-                "A9 POLICE"=> "A9 POLICE",
-                "B618"=> "B618",)))
+                "P21e"=> "P21e",
+                )))
             -> add('fotka' ,FileType :: class, array('required' => false, 'label' => 'nahraj fotku') )
         ;
 

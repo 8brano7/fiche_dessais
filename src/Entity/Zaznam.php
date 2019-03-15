@@ -52,7 +52,7 @@ class Zaznam
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $nazov_dotknuteho_dielu;
+    private $nazov_skusky;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -105,7 +105,7 @@ class Zaznam
     /**
      * @ORM\Column(type="text")
      */
-    private $mnozstvo;
+    private $mnozstvo_dielov;
 
     /**
      * @ORM\Column(type="simple_array")
@@ -130,27 +130,27 @@ class Zaznam
     private $zmena_oproti_seriovemu_stavu;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=255)
      */
     private $zmena_dielu;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=255)
      */
     private $zmena_skrutkovania;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=255)
      */
     private $zmena_procesu;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=255)
      */
     private $zmena_bezpecnostneho_skrutkovania;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=255)
      */
     private $zmena_pracovneho_postupu;
 
@@ -176,7 +176,7 @@ class Zaznam
     private $dotknute_posty_na_montazi;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=255)
      */
     private $pozadovane_kontroly;
 
@@ -327,14 +327,14 @@ class Zaznam
         return $this;
     }
 
-    public function getNazovDotknutehoDielu(): ?string
+    public function getNazovSkusky(): ?string
     {
-        return $this->nazov_dotknuteho_dielu;
+        return $this->nazov_skusky;
     }
 
-    public function setNazovDotknutehoDielu(?string $nazov_dotknuteho_dielu): self
+    public function setNazovSkusky(?string $nazov_skusky): self
     {
-        $this->nazov_dotknuteho_dielu = $nazov_dotknuteho_dielu;
+        $this->nazov_skusky = $nazov_skusky;
 
         return $this;
     }
@@ -454,14 +454,14 @@ class Zaznam
         return $this;
     }
 
-    public function getMnozstvo(): ?string
+    public function getMnozstvoDielov(): ?string
     {
-        return $this->mnozstvo;
+        return $this->mnozstvo_dielov;
     }
 
-    public function setMnozstvo(?string $mnozstvo): self
+    public function setMnozstvoDielov(?string $mnozstvo_dielov): self
     {
-        $this->mnozstvo = $mnozstvo;
+        $this->mnozstvo_dielov = $mnozstvo_dielov;
 
         return $this;
     }

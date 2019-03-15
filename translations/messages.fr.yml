@@ -2,7 +2,7 @@ translate.cislo_danu: No dan:
 translate.n_altis: N° altis:
 translate.skuska_v_inom_zavode: Essai realise sur autre site:
 translate.cislo_predchadzajucej_skusky: N° d'essai precedent:
-translate.nazov_dotknuteho_dielu: Pieces ou elements concernes:
+translate.nazov_skusky: Nm du test:
 translate.oddelenie_ziadatela: Service emetteur:
 translate.ziadatel_skusky: Demandeur de l'essai:
 translate.telefon: Telephone:
@@ -14,7 +14,7 @@ translate.referencia_dielu: N° de piece:
 translate.miesto_spotreby_post: Lieu:
 translate.dodavatel: Entrepreneur:
 translate.cislo_pracovneho_postupu: N° de gamme:
-translate.mnozstvo: Quantité:
+translate.mnozstvo_dielov: Quantité parties:
 translate.ucastnici_skusky: Participants a l’essai:
 translate.dovod_skusky: Raison de l'essai:
 translate.zmena_oproti_seriovemu_stavu: Changement par rapport a la solution de serie:
@@ -39,7 +39,7 @@ translate.skuska_iqa: IQA:
 translate.skuska_ine: Autres:
 translate.modernizacia_po_skuske: Modernisation des vehicules:
 translate.retus: Retouches prévues:
-translate.submit: Confirmer la sélection
+translate.submit: Envoyer le formulaire complété
 translate.ingq: INGQ:
 translate.vyberte_si_z_moznosti: Choisissez parmi les options
 translate.vyberte_si_jednu_z_moznosti: Choisissez l'une des options
@@ -54,7 +54,9 @@ translate.nie: Mon
 
 translate.nahrataFotka: Photo téléchargée:
 translate.vyber: Selection:
-translate.nadpisPDF: Fiche Essais - numéro d'examen:
+
+translate.nadpisPDF1: mm du test:
+translate.nadpisPDF2: nombre:
 
 translate.vysledokSkusky: Résultat du test:
 translate.konecneRozhodnutie: Decision finale prise par la commission essais:
@@ -63,3 +65,6 @@ translate.odmietnutie: Refus:
 translate.zostatok: Soldé:
 translate.datum: Date:
 translate.my_locale: fr
+
+translate.upozornenie_nadpis: Avertissement
+translate.upozornenie_text: Lorsque vous appuyez sur le bouton Envoyer, FDE est généré au format PDF et Outlook s'ouvre avec un lien vers le PDF.Il ne sera plus possible de modifier le formulaire après la soumission. Un nouveau formulaire doit être rempli et soumis pour correction.
