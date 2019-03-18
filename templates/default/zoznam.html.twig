@@ -130,7 +130,7 @@
                     <div class="row">
                         <div class="col-md-4">
                             <label for="exampleInputEmail1">{{ 'translate.nazov_skusky' | trans }}</label>
-                            <input id="nazov-skusky" class="form-control"  name="nazov_skusky"  required=""  oninvalid="this.setCustomValidity('{{ 'translate.povinny_udaj' | trans }}')"  onchange="this.setCustomValidity('')" />
+                            <input id="nazov-skusky" class="form-control"  name="nazov_skusky"  maxlength="60" required=""  oninvalid="this.setCustomValidity('{{ 'translate.povinny_udaj' | trans }}')"  onchange="this.setCustomValidity('')" />
                         </div>
                         <div class="col-md-4">
                             <label for="exampleInputEmail1">{{ 'translate.n_altis' | trans }}</label>
