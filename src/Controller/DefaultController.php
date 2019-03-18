@@ -23,7 +23,6 @@ class DefaultController extends AbstractController
      * @Route(path="/", name="index_action")
      */
     public function home () {
-
         return $this->render('default/zoznam.html.twig');
     }
 
@@ -58,6 +57,7 @@ class DefaultController extends AbstractController
 
             $ucastnici = $zaznamData->getUcastniciSkusky();
             $ucastnici[] = "cc";
+
 
             /** @var Oddelenia[] $oddelenia */
             $oddelenia = $em->getRepository(Oddelenia::class)->findBy(['oddelenie' => $ucastnici]);

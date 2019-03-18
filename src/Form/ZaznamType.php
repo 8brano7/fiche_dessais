@@ -43,10 +43,6 @@ class ZaznamType extends AbstractType
                 "dsee"=> "dsee",
                 "fer"=> "fer",
                 "meca"=> "meca",)))
-            ->add('ingq', ChoiceType::class, array('required' => false, "expanded" => true, 'multiple' => true, 'choices' => array (
-                "MECA"=> "MECA",
-                "DSEE"=> "DSEE",
-                "DCHM"=> "DCHM",)))
             -> add('zmena_dielu' ,TextType :: class )
             -> add('zmena_bezpecnostneho_skrutkovania' ,TextType :: class )
             -> add('zmena_procesu' ,TextType :: class )

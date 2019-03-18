@@ -9,6 +9,18 @@
 
 
     <style>
+
+        /* hide up/down arrows ("spinners") on input fields marked type="number" */
+        .no-spinners {
+            -moz-appearance:textfield;
+        }
+
+        .no-spinners::-webkit-outer-spin-button,
+        .no-spinners::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
         .row.no-gutter {
             margin-left: 0;
             margin-right: 0;
@@ -78,353 +90,371 @@
         /*}*/
 
 
+
     </style>
 
-
-
-
-
-<form id="zaznam-form" data-my-locale="{{ 'translate.my_locale' | trans }}">
-    <div id="zoznam-container" class="container">
-        <h1><center>Fiche d'essai</center></h1>
-        <div style="position: absolute; top: 2rem; right: 12rem;">
-            <a href="http://localhost:8000/sk">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 6" style="width: 2rem;">
-                    <title>Flag of Slovakia</title>
-                    <rect width="9" height="6" fill="#ee1c25"/>
-                    <rect width="9" height="4" fill="#0b4ea2"/>
-                    <rect width="9" height="2" fill="#fff"/>
-                    <g>
-                        <path fill="#fff" d="M3.16255,4.635c-0.53781-0.25905-1.3071-0.77323-1.3071-1.79033,0-1.01711,0.04863-1.47967,0.04863-1.47967h1.25847,1.2585s0.04864,0.46256,0.04864,1.47967c0,1.0171-0.76929,1.53128-1.30714,1.79033z"/>
-                        <path fill="#ee1c25" d="M3.16255,4.5c-0.4934-0.23766-1.19917-0.70938-1.19917-1.64251,0-0.933128,0.044612-1.35749,0.044612-1.35749h1.15456,1.15459s0.044626,0.424365,0.044626,1.35749c0,0.933128-0.705776,1.40485-1.19921,1.64251z"/>
-                        <path fill="#fff" d="m3.26808,2.61284c0.133599,0.00216,0.394255,0.00739,0.626352-0.070273,0,0-0.00613,0.083055-0.00613,0.179805,0,0.096773,0.00613,0.179822,0.00613,0.179822-0.21289-0.07125-0.4758-0.07273-0.62635-0.07082v0.515391h-0.211033v-0.515391c-0.150545-0.00191-0.41345-0.0004252-0.626352,0.070815,0,0,0.00613-0.083049,0.00613-0.179822,0-0.09675-0.00613-0.179805-0.00613-0.179805,0.2321,0.077665,0.492753,0.072432,0.626352,0.070273v-0.323676c-0.121766-0.00108-0.297234,0.00473-0.49563,0.071126,0,0,0.00613-0.083055,0.00613-0.179822,0-0.096756-0.00613-0.179811-0.00613-0.179811,0.198103,0.066283,0.373356,0.072192,0.495088,0.071137-0.00626-0.20498-0.06597-0.46332-0.06597-0.46332s0.12289,0.00959,0.172016,0.00959c0.049178,0,0.172031-0.00959,0.172031-0.00959s-0.059695,0.258346-0.065964,0.463301c0.121741,0.00106,0.296989-0.00485,0.495086-0.071137,0,0-0.00613,0.083055-0.00613,0.179811,0,0.096767,0.00613,0.179822,0.00613,0.179822-0.198388-0.066392-0.373863-0.072207-0.495627-0.071126v0.323676z"/>
-                        <path fill="#0b4ea2" d="m3.1625,3.29094c-0.24847,0-0.381562,0.344688-0.381562,0.344688s-0.073834-0.163438-0.276562-0.163438c-0.137161,0-0.238243,0.12201-0.3025,0.235,0.24954,0.39705,0.64768,0.64207,0.96062,0.79281,0.31299-0.15075,0.71139-0.39571,0.96094-0.79281-0.064256-0.11299-0.165339-0.235-0.3025-0.235-0.202734,0-0.276875,0.163438-0.276875,0.163438s-0.133073-0.344688-0.381562-0.344688z"/>
-                    </g>
-                </svg>
-            </a>
-            <a href="http://localhost:8000/fr/">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" style="width: 2rem;">
-                    <rect width="3" height="2" fill="#ED2939"/>
-                    <rect width="2" height="2" fill="#fff"/>
-                    <rect width="1" height="2" fill="#002395"/>
-                </svg>
-            </a>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <label for="exampleInputEmail1">{{ 'translate.nazov_skusky' | trans }}</label>
-                <input class="form-control"  name="nazov_skusky"  required=""  oninvalid="this.setCustomValidity('{{ 'translate.povinny_udaj' | trans }}')"  onchange="this.setCustomValidity('')" />
-            </div>
-            <div class="col-md-4">
-                <label for="exampleInputEmail1">{{ 'translate.n_altis' | trans }}</label>
-                <input class="form-control form-control"  name="n_altis" type="text"   />
-            </div>
-            <div class="col-md-4">
-                <label for="exampleInputEmail1">{{ 'translate.cislo_predchadzajucej_skusky' | trans }}</label>
-                <input class="form-control form-control" name="cislo_predchadzajucej_skusky" type="text" oninvalid="this.setCustomValidity('{{ 'translate.zle_zadany_udaj' | trans }}')"  onchange="this.setCustomValidity('')"/>
-            </div>
-
-        </div>
-
-
-
-        <div class="row">
-            <div class="col-md-4">
-                <label for="exampleInput" >{{ 'translate.skuska_v_inom_zavode' | trans }}</label>
-                <select class="selectpicker"  name="skuska_v_inom_zavode[]"  multiple="multiple" data-live="true"  data-width="100%" title="{{ 'translate.vyberte_si_z_moznosti' | trans }}">
-                    <option  value="Velizy">Velizy</option>
-                    <option  value="Mulhouse"> Mulhouse</option>
-                    <option  value="Poissy">Poissy</option>
-                </select>
-
-            </div>
-            <div class="col-md-4">
-                <label for="exampleInputEmail1">{{ 'translate.pozadovany_pocet_aut' | trans }}</label>
-                <input class="form-control"  name="pozadovany_pocet_aut"  required=""  oninvalid="this.setCustomValidity('{{ 'translate.povinny_udaj' | trans }}')"  onchange="this.setCustomValidity('')" />
-            </div>
-
-            <div class="col-md-4">
-                <label for="exampleInputEmail1">{{ 'translate.cislo_danu' | trans }}</label>
-                <input class="form-control form-control"   name="cislo_danu"   />
-            </div>
-            <div class="col-md-4">
-                <label for="exampleInputEmail1">{{ 'translate.oddelenie_ziadatela' | trans }}</label>
-                <input class="form-control form-control"  name="oddelenie_ziadatela" type="text" required="" oninput="this.setCustomValidity('')"  oninvalid="this.setCustomValidity('{{ 'translate.povinny_udaj' | trans }}')" />
-            </div>
-            <div class="col-md-4">
-                <label for="exampleInputEmail1">{{ 'translate.ziadatel_skusky' | trans }}</label>
-                <input class="form-control form-control"  name="ziadatel_skusky"   type="text"  required=""  oninvalid="this.setCustomValidity('{{ 'translate.povinny_udaj' | trans }}')"  onchange="this.setCustomValidity('')" />
-            </div>
-            <div class="col-md-4">
-                <label for="exampleInputEmail1">{{ 'translate.telefon' | trans }}</label>
-                <input class="form-control form-control"  name="telefon"  placeholder="+ 421"  type="tel"  required=""  oninvalid="this.setCustomValidity('{{ 'translate.povinny_udaj' | trans }}')"  onchange="this.setCustomValidity('')" />
-            </div>
-        </div>
-
-
-        <div class="row">
-        <div class="container">
-
-
-            <div class="row">
-            <div class="col-md-4">
-                   <label for="exampleInputEmail1">{{ 'translate.datum_vyplnenia' | trans }}</label>
-                <input class="form-control js-datepicker" id="datepicker"   type="date" name="datum_vyplnenia"  type="text"  />
-            </div>
-            {#<div class="col-md-4">#}
-                   {#<label for="exampleInputEmail1">{{ 'translate.realizacia_skusky' | trans }}</label>#}
-                {#<input class="form-control js-datepicker"  type="datetime-local" title="REALIZACIA_SKUSKY" name="realizacia_skusky" value="" type="text"/>#}
-            {#</div>#}
-
-                <div class="col-md-4">
-                <label for="exampleInputEmail1">{{ 'translate.realizacia_skusky' | trans }}</label>
-                <input class="form-control datetimepicker"   id='datetimepicker'  name="realizacia_skusky"  type="date"/>
-                </div>
-                <div class="col-md-4">
-                    <label for="exampleInputEmail1">{{ 'translate.vozidla' | trans }}</label>
-                    <select class="selectpicker" multiple="multiple" data-width="100%" title="{{ 'translate.vyberte_si_z_moznosti' | trans }} " name="vozidla[]"  required=""  oninvalid="this.setCustomValidity('{{ 'translate.povinny_udaj' | trans }}')"  onchange="this.setCustomValidity('')" >
-                        <option value="B6">B6</option>
-                        <option value="P21">P21</option>
-                        <option VALUE="A9">A9</option>
-                        <option value="P21e">P21e</option>
-                    </select>
-                </div>
-        </div>
-
-
-        <div class="row">
-            <div class="col-md-4">
-                   <label for="exampleInputEmail1">{{ 'translate.motorizacia' | trans }}</label>
-                <select class="selectpicker" multiple data-live="true" data-width="100%" title="{{ 'translate.vyberte_si_z_moznosti' | trans }}" name="motorizacia[]" >
-                    <option value="TT Essence / benzín">TT Essence / benzín</option>
-                    <option value="TT Diesel">TT Diesel</option>
-                </select>
-            </div>
-
-                <div class="col-md-4">
-                  <label for="exampleInputEmail1">{{ 'translate.referencia_dielu' | trans }}</label>
-           <input class="form-control form-control"  name="referencia_dielu" type="text" oninvalid="this.setCustomValidity('{{ 'translate.zle_zadany_udaj' | trans }}')"  onchange="this.setCustomValidity('')" />
-                </div>
-
-                <div class="col-md-4">
-                  <label for="exampleInputEmail1">{{ 'translate.miesto_spotreby_post' | trans }}</label>
-           <input class="form-control form-control"  name="miesto_spotreby_post" type="text" />
-                </div>
-                <div class="col-md-4">
-                  <label for="exampleInputEmail1">{{ 'translate.dodavatel' | trans }}</label>
-                    <input class="form-control form-control" name="dodavatel" type="text" >
-             </div>
-
-
-                <div class="col-md-4">
-                  <label for="exampleInputEmail1">{{ 'translate.cislo_pracovneho_postupu' | trans }}</label>
-           <input class="form-control form-control"  name="cislo_pracovneho_postupu" type="text" />
-                </div>
-                <div class="col-md-4">
-                  <label for="exampleInputEmail1">{{ 'translate.mnozstvo_dielov' | trans }}</label>
-         <input class="form-control form-control"  name="mnozstvo_dielov" type="text"  required=""  oninvalid="this.setCustomValidity('{{ 'translate.povinny_udaj' | trans }}')"  onchange="this.setCustomValidity('')" />
-             </div>
-
-
-                <div class="col-md-4">
-                    <label for="exampleInputEmail1">{{ 'translate.ucastnici_skusky' | trans }}</label>
-                    <select class="selectpicker"  multiple data-live="true" data-width="100%" title="Vyberte si z možnosti" name="ucastnici_skusky[]"   oninvalid="this.setCustomValidity('{{ 'translate.povinny_udaj' | trans }}')"  onchange="this.setCustomValidity('')" >
-                        <option></option>
-                        <option value="cc" selected>CC</option>
-                        <option value="cmon">CMON</option>
-                        <option value="dchm">DCHM</option>
-                        <option value="dsee">DSEE</option>
-                        <option value="fer">FER</option>
-                        <option value="meca">MECA</option>
-
-                    </select>
-                </div>
-                <div class="col-md-4">
-                    <label for="exampleInputEmail1">{{ 'translate.ingq' | trans }}</label>
-                    <select class="selectpicker"  name="ingq[]" multiple="multiple"  data-width="100%" title="{{ 'translate.vyberte_si_z_moznosti' | trans }}"  >
-                        <option value="MECA">MECA</option>
-                        <option value="DSEE">DSEE</option>
-                        <option value="DCHM">DCHM</option>
-                    </select>
-                </div>
-            </div>
-
-
-            <div class="row">
-                <div class="col-md-12">
-                    <label for="exampleInput">{{ 'translate.dovod_skusky' | trans }}</label>
-                    <textarea id="textarea" class="form-control" name="dovod_skusky"  required=""  oninvalid="this.setCustomValidity('{{ 'translate.povinny_udaj' | trans }}')"  onchange="this.setCustomValidity('')" cols="" rows=""></textarea>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-12">
-                    <label for="exampleInput">{{ 'translate.zmena_oproti_seriovemu_stavu' | trans }}</label>
-                    <textarea id="textarea" class="form-control"  name="zmena_oproti_seriovemu_stavu" cols="" rows=""></textarea>
-                </div>
-            </div>
-
-
-            <div class="row">
-                <div class="col-md-12">
-                    <label style="font-size: 1.6rem" for="exampleInputEmail1">{{ 'translate.zmena_sa_tyka' | trans }}</label>
-                </div>
-
-                    <div class="col-md-3">
-                    <label for="exampleInputEmail1">{{ 'translate.zmena_dielu' | trans }}</label>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <form id="zaznam-form" data-my-locale="{{ 'translate.my_locale' | trans }}">
+                <div id="zoznam-container" class="container">
+                    <div class="row">
+                        <div class="col text-center">
+                            <h1>Fiche d'essai: <span id="fds-text"></span></h1>
+                        </div>
                     </div>
 
-                <div class="col-md-3">
-                        <input type="radio"   name="zmena_dielu" data-otazka="1" value="Áno"  required > {{ 'translate.ano' | trans }}
-                        <input type="radio" name="zmena_dielu" data-otazka="1" value="Nie"    required            > {{ 'translate.nie' | trans }}
-                </div>
-
-                        <div class="col-md-3">
-                            <label for="exampleInputEmail1">{{ 'translate.zmena_skrutkovania' | trans }}</label>
+                    <div style="position: absolute; top: 3rem; right: 1rem;">
+                        <a href="http://localhost:8000/sk">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 6" style="width: 2rem;">
+                                <title>Flag of Slovakia</title>
+                                <rect width="9" height="6" fill="#ee1c25"/>
+                                <rect width="9" height="4" fill="#0b4ea2"/>
+                                <rect width="9" height="2" fill="#fff"/>
+                                <g>
+                                    <path fill="#fff" d="M3.16255,4.635c-0.53781-0.25905-1.3071-0.77323-1.3071-1.79033,0-1.01711,0.04863-1.47967,0.04863-1.47967h1.25847,1.2585s0.04864,0.46256,0.04864,1.47967c0,1.0171-0.76929,1.53128-1.30714,1.79033z"/>
+                                    <path fill="#ee1c25" d="M3.16255,4.5c-0.4934-0.23766-1.19917-0.70938-1.19917-1.64251,0-0.933128,0.044612-1.35749,0.044612-1.35749h1.15456,1.15459s0.044626,0.424365,0.044626,1.35749c0,0.933128-0.705776,1.40485-1.19921,1.64251z"/>
+                                    <path fill="#fff" d="m3.26808,2.61284c0.133599,0.00216,0.394255,0.00739,0.626352-0.070273,0,0-0.00613,0.083055-0.00613,0.179805,0,0.096773,0.00613,0.179822,0.00613,0.179822-0.21289-0.07125-0.4758-0.07273-0.62635-0.07082v0.515391h-0.211033v-0.515391c-0.150545-0.00191-0.41345-0.0004252-0.626352,0.070815,0,0,0.00613-0.083049,0.00613-0.179822,0-0.09675-0.00613-0.179805-0.00613-0.179805,0.2321,0.077665,0.492753,0.072432,0.626352,0.070273v-0.323676c-0.121766-0.00108-0.297234,0.00473-0.49563,0.071126,0,0,0.00613-0.083055,0.00613-0.179822,0-0.096756-0.00613-0.179811-0.00613-0.179811,0.198103,0.066283,0.373356,0.072192,0.495088,0.071137-0.00626-0.20498-0.06597-0.46332-0.06597-0.46332s0.12289,0.00959,0.172016,0.00959c0.049178,0,0.172031-0.00959,0.172031-0.00959s-0.059695,0.258346-0.065964,0.463301c0.121741,0.00106,0.296989-0.00485,0.495086-0.071137,0,0-0.00613,0.083055-0.00613,0.179811,0,0.096767,0.00613,0.179822,0.00613,0.179822-0.198388-0.066392-0.373863-0.072207-0.495627-0.071126v0.323676z"/>
+                                    <path fill="#0b4ea2" d="m3.1625,3.29094c-0.24847,0-0.381562,0.344688-0.381562,0.344688s-0.073834-0.163438-0.276562-0.163438c-0.137161,0-0.238243,0.12201-0.3025,0.235,0.24954,0.39705,0.64768,0.64207,0.96062,0.79281,0.31299-0.15075,0.71139-0.39571,0.96094-0.79281-0.064256-0.11299-0.165339-0.235-0.3025-0.235-0.202734,0-0.276875,0.163438-0.276875,0.163438s-0.133073-0.344688-0.381562-0.344688z"/>
+                                </g>
+                            </svg>
+                        </a>
+                        <a href="http://localhost:8000/fr/">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" style="width: 2rem;">
+                                <rect width="3" height="2" fill="#ED2939"/>
+                                <rect width="2" height="2" fill="#fff"/>
+                                <rect width="1" height="2" fill="#002395"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for="exampleInputEmail1">{{ 'translate.nazov_skusky' | trans }}</label>
+                            <input id="nazov-skusky" class="form-control"  name="nazov_skusky"  required=""  oninvalid="this.setCustomValidity('{{ 'translate.povinny_udaj' | trans }}')"  onchange="this.setCustomValidity('')" />
+                        </div>
+                        <div class="col-md-4">
+                            <label for="exampleInputEmail1">{{ 'translate.n_altis' | trans }}</label>
+                            <input class="form-control form-control"  name="n_altis" type="text"   />
+                        </div>
+                        <div class="col-md-4">
+                            <label for="exampleInputEmail1">{{ 'translate.cislo_predchadzajucej_skusky' | trans }}</label>
+                            <input class="form-control form-control" name="cislo_predchadzajucej_skusky" type="text" oninvalid="this.setCustomValidity('{{ 'translate.zle_zadany_udaj' | trans }}')"  onchange="this.setCustomValidity('')"/>
                         </div>
 
-                <div class="col-md-3">
-                            <input type="radio" name="zmena_skrutkovania" data-otazka="1" value="Áno" required   > {{ 'translate.ano' | trans }}
-                            <input type="radio" name="zmena_skrutkovania" data-otazka="1" value="Nie"  required   > {{ 'translate.nie' | trans }}
-                         </div>
-
-                <div class="col-md-3">
-                    <label for="exampleInputEmail1">{{ 'translate.zmena_procesu' | trans }}</label>
-                </div>
-
-                <div class="col-md-3">
-                    <input type="radio" name="zmena_procesu" data-otazka="1" value="Áno"   required  > {{ 'translate.ano' | trans }}
-                    <input type="radio" name="zmena_procesu" data-otazka="1" value="Nie"    required  > {{ 'translate.nie' | trans }}
-                </div>
-
-                <div class="col-md-3">
-                    <label for="exampleInputEmail1">{{ 'translate.zmena_bezpecnostneho_skrutkovania' | trans }}</label>
-                </div>
-
-                <div class="col-md-3">
-                    <input type="radio" name="zmena_bezpecnostneho_skrutkovania" data-otazka="1" value="Áno" required   > {{ 'translate.ano' | trans }}
-                    <input type="radio" name="zmena_bezpecnostneho_skrutkovania" data-otazka="1" value="Nie"  required  > {{ 'translate.nie' | trans }}
-                </div>
-
-                    <div class="col-md-3">
-                        <label for="exampleInputEmail1">{{ 'translate.zmena_pracovneho_postupu' | trans }}</label>
                     </div>
 
-                <div class="col-md-3">
-                        <input type="radio" name="zmena_pracovneho_postupu" data-otazka="1" value="Áno"  required   > {{ 'translate.ano' | trans }}
-                        <input type="radio" name="zmena_pracovneho_postupu" data-otazka="1" value="Nie"  required    > {{ 'translate.nie' | trans }}
-                </div>
-            </div>
 
-            <div class="row">
-        <div class="col-md-12">
-                    <label for="exampleInputEmail1">{{ 'translate.pripoj_foto_do_zalozky' | trans }} </label>
-            <span>(JPEG, PNG, GIF)<br>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for="exampleInput" >{{ 'translate.skuska_v_inom_zavode' | trans }}</label>
+                            <select class="selectpicker"  name="skuska_v_inom_zavode[]"  multiple="multiple" data-live="true"  data-width="100%" title="{{ 'translate.vyberte_si_z_moznosti' | trans }}">
+                                <option  value="Velizy">Velizy</option>
+                                <option  value="Mulhouse"> Mulhouse</option>
+                                <option  value="Poissy">Poissy</option>
+                            </select>
+
+                        </div>
+                        <div class="col-md-4">
+                            <label for="exampleInputEmail1">{{ 'translate.pozadovany_pocet_aut' | trans }}</label>
+                            <input class="form-control no-spinners"  name="pozadovany_pocet_aut"  required pattern="[0-9]+"
+                                   oninput="
+                                           setCustomValidity('');
+                                           checkValidity();
+
+                                           console.log(validity);
+
+                                           if (validity.patternMismatch) {
+                                           setCustomValidity('{{ 'translate.len_ciselne_hodnoty' | trans }}');
+                                           }
+                                           else if (validity.valueMissing) {
+                                           setCustomValidity('{{ 'translate.povinny_udaj' | trans }}');
+                                           }
+                                           else if (validity.valid) {
+                                           setCustomValidity('');
+                                           }
+                                           // allow default validation message to appear for other validation failures
+                                           "
+
+
+                            />
+                        </div>
+
+                        <div class="col-md-4">
+                            <label for="exampleInputEmail1">{{ 'translate.cislo_danu' | trans }}</label>
+                            <input class="form-control form-control"   name="cislo_danu"   />
+                        </div>
+                        <div class="col-md-4">
+                            <label for="exampleInputEmail1">{{ 'translate.oddelenie_ziadatela' | trans }}</label>
+                            <input class="form-control form-control"  name="oddelenie_ziadatela" type="text" required="" oninput="this.setCustomValidity('')"  oninvalid="this.setCustomValidity('{{ 'translate.povinny_udaj' | trans }}')" />
+                        </div>
+                        <div class="col-md-4">
+                            <label for="exampleInputEmail1">{{ 'translate.ziadatel_skusky' | trans }}</label>
+                            <input class="form-control form-control"  name="ziadatel_skusky"   type="text"  required=""  oninvalid="this.setCustomValidity('{{ 'translate.povinny_udaj' | trans }}')"  onchange="this.setCustomValidity('')" />
+                        </div>
+                        <div class="col-md-4">
+                            <label for="exampleInputEmail1">{{ 'translate.telefon' | trans }}</label>
+                            <input class="form-control form-control"  name="telefon"  placeholder="+ 421"  type="tel"  required=""  oninvalid="this.setCustomValidity('{{ 'translate.povinny_udaj' | trans }}')"  onchange="this.setCustomValidity('')" />
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="container">
+
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label for="exampleInputEmail1">{{ 'translate.datum_vyplnenia' | trans }}</label>
+                                    <input class="form-control js-datepicker" id="datepicker"   type="date" name="datum_vyplnenia"  type="text"  />
+                                </div>
+                                {#<div class="col-md-4">#}
+                                {#<label for="exampleInputEmail1">{{ 'translate.realizacia_skusky' | trans }}</label>#}
+                                {#<input class="form-control js-datepicker"  type="datetime-local" title="REALIZACIA_SKUSKY" name="realizacia_skusky" value="" type="text"/>#}
+                                {#</div>#}
+
+                                <div class="col-md-4">
+                                    <label for="exampleInputEmail1">{{ 'translate.realizacia_skusky' | trans }}</label>
+                                    <input class="form-control datetimepicker"   id='datetimepicker'  name="realizacia_skusky"  type="date"/>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="exampleInputEmail1">{{ 'translate.vozidla' | trans }}</label>
+                                    <select class="selectpicker" multiple="multiple" data-width="100%" title="{{ 'translate.vyberte_si_z_moznosti' | trans }} " name="vozidla[]"  required=""  oninvalid="this.setCustomValidity('{{ 'translate.povinny_udaj' | trans }}')"  onchange="this.setCustomValidity('')" >
+                                        <option value="B6">B6</option>
+                                        <option value="P21">P21</option>
+                                        <option VALUE="A9">A9</option>
+                                        <option value="P21e">P21e</option>
+                                    </select>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label for="exampleInputEmail1">{{ 'translate.motorizacia' | trans }}</label>
+                                    <select class="selectpicker" multiple data-live="true" data-width="100%" title="{{ 'translate.vyberte_si_z_moznosti' | trans }}" name="motorizacia[]" >
+                                        <option value="TT Essence / benzín">TT Essence / benzín</option>
+                                        <option value="TT Diesel">TT Diesel</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label for="exampleInputEmail1">{{ 'translate.referencia_dielu' | trans }}</label>
+                                    <input class="form-control form-control"  name="referencia_dielu" type="text" oninvalid="this.setCustomValidity('{{ 'translate.zle_zadany_udaj' | trans }}')"  onchange="this.setCustomValidity('')" />
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label for="exampleInputEmail1">{{ 'translate.miesto_spotreby_post' | trans }}</label>
+                                    <input class="form-control form-control"  name="miesto_spotreby_post" type="text" />
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="exampleInputEmail1">{{ 'translate.dodavatel' | trans }}</label>
+                                    <input class="form-control form-control" name="dodavatel" type="text" >
+                                </div>
+
+
+                                <div class="col-md-4">
+                                    <label for="exampleInputEmail1">{{ 'translate.cislo_pracovneho_postupu' | trans }}</label>
+                                    <input class="form-control form-control"  name="cislo_pracovneho_postupu" type="text" />
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="exampleInputEmail1">{{ 'translate.mnozstvo_dielov' | trans }}</label>
+                                    <input class="form-control form-control"  name="mnozstvo_dielov" type="text"  required=""  oninvalid="this.setCustomValidity('{{ 'translate.povinny_udaj' | trans }}')"  onchange="this.setCustomValidity('')" />
+                                </div>
+
+
+                                <div class="col-md-4">
+                                    <label for="exampleInputEmail1">{{ 'translate.ucastnici_skusky' | trans }}</label>
+                                    <select class="selectpicker"  multiple data-live="true" data-width="100%" title="Vyberte si z možnosti" name="ucastnici_skusky[]"   oninvalid="this.setCustomValidity('{{ 'translate.povinny_udaj' | trans }}')"  onchange="this.setCustomValidity('')" >
+                                        <option value="cc" selected>CC</option>
+                                        <option value="cmon">CMON</option>
+                                        <option value="dchm">DCHM</option>
+                                        <option value="dsee">DSEE</option>
+                                        <option value="fer">FER</option>
+                                        <option value="meca">MECA</option>
+
+                                    </select>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label for="exampleInput">{{ 'translate.dovod_skusky' | trans }}</label>
+                                    <textarea id="textarea" class="form-control" name="dovod_skusky"  required=""  oninvalid="this.setCustomValidity('{{ 'translate.povinny_udaj' | trans }}')"  onchange="this.setCustomValidity('')" cols="" rows=""></textarea>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label for="exampleInput">{{ 'translate.zmena_oproti_seriovemu_stavu' | trans }}</label>
+                                    <textarea id="textarea" class="form-control"  name="zmena_oproti_seriovemu_stavu" cols="" rows=""></textarea>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label style="font-size: 1.6rem" for="exampleInputEmail1">{{ 'translate.zmena_sa_tyka' | trans }}</label>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label for="exampleInputEmail1">{{ 'translate.zmena_dielu' | trans }}</label>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <input type="radio"   name="zmena_dielu" data-otazka="1" value="Áno"  required > {{ 'translate.ano' | trans }}
+                                    <input type="radio" name="zmena_dielu" data-otazka="1" value="Nie"  style="margin-left: 0.3rem"   required            > {{ 'translate.nie' | trans }}
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label for="exampleInputEmail1">{{ 'translate.zmena_skrutkovania' | trans }}</label>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <input type="radio" name="zmena_skrutkovania" data-otazka="1" value="Áno" required   > {{ 'translate.ano' | trans }}
+                                    <input type="radio" name="zmena_skrutkovania" data-otazka="1" value="Nie" style="margin-left: 0.3rem"  required   > {{ 'translate.nie' | trans }}
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label for="exampleInputEmail1">{{ 'translate.zmena_procesu' | trans }}</label>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <input type="radio" name="zmena_procesu" data-otazka="1" value="Áno"   required  > {{ 'translate.ano' | trans }}
+                                    <input type="radio" name="zmena_procesu" data-otazka="1" value="Nie" style="margin-left: 0.3rem"    required  > {{ 'translate.nie' | trans }}
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label for="exampleInputEmail1">{{ 'translate.zmena_bezpecnostneho_skrutkovania' | trans }}</label>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <input type="radio" name="zmena_bezpecnostneho_skrutkovania" data-otazka="1" value="Áno" required   > {{ 'translate.ano' | trans }}
+                                    <input type="radio" name="zmena_bezpecnostneho_skrutkovania" data-otazka="1" value="Nie" style="margin-left: 0.3rem"  required  > {{ 'translate.nie' | trans }}
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label for="exampleInputEmail1">{{ 'translate.zmena_pracovneho_postupu' | trans }}</label>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <input type="radio" name="zmena_pracovneho_postupu" data-otazka="1" value="Áno"  required   > {{ 'translate.ano' | trans }}
+                                    <input type="radio" name="zmena_pracovneho_postupu" data-otazka="1" value="Nie"  style="margin-left: 0.3rem" required    > {{ 'translate.nie' | trans }}
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label for="exampleInputEmail1">{{ 'translate.pripoj_foto_do_zalozky' | trans }} </label>
+                                    <span>(JPEG, PNG, GIF)<br>
                  <input type="file" name="fotka"><br>
             </span>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label for="exampleInputEmail1">{{ 'translate.dotknute_posty_na_montazi' | trans }}</label>
+                                    <textarea id="textarea"  class="form-control"  name="dotknute_posty_na_montazi" cols="" rows=""></textarea>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <label for="exampleInputEmail1">{{ 'translate.pozadovane_kontroly' | trans }}</label>
+                                    <textarea id="textarea" class="form-control" name="pozadovane_kontroly" required=""  oninvalid="this.setCustomValidity('{{ 'translate.povinny_udaj' | trans }}')"  onchange="this.setCustomValidity('')" cols="" rows=""></textarea>
+                                </div>
+
+
+                                <div class="col-md-12">
+                                    <label for="exampleInputEmail1">{{ 'translate.blokovat_auta_na_kontrolu' | trans }}  </label>
+                                    <input required="" type="radio" name="blokovat_auta_na_kontrolu" data-otazka="1" value="Áno"   > {{ 'translate.ano' | trans }}
+                                    <input required="" type="radio" name="blokovat_auta_na_kontrolu" data-otazka="1" value="Nie" style="margin-left: 0.3rem"  > {{ 'translate.nie' | trans }}
+                                </div>
+
+
+
+                                <div class="col-md-4">
+                                    <label for="exampleInputEmail1">{{ 'translate.skuska_jazda' | trans }}</label>
+                                    <select class="selectpicker" name="skuska_jazda" data-width="100%" title="{{ 'translate.vyberte_si_jednu_z_moznosti' | trans }}">
+                                        <option value="Áno">{{ 'translate.ano' | trans }}</option>
+                                        <option value="Nie">{{ 'translate.nie' | trans }}</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="exampleInputEmail1">{{ 'translate.skuska_iqf' | trans }}</label>
+                                    <select class="selectpicker" name="skuska_iqf" data-width="100%" title="{{ 'translate.vyberte_si_jednu_z_moznosti' | trans }}">
+                                        <option value="Áno">{{ 'translate.ano' | trans }}</option>
+                                        <option value="Nie">{{ 'translate.nie' | trans }}</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="exampleInputEmail1">{{ 'translate.skuska_hluk' | trans }}</label>
+                                    <select class="selectpicker" name="skuska_hluk" data-width="100%" title="{{ 'translate.vyberte_si_jednu_z_moznosti' | trans }}">
+                                        <option value="Áno">{{ 'translate.ano' | trans }}</option>
+                                        <option value="Nie">{{ 'translate.nie' | trans }}</option>
+                                    </select>
+                                </div>
+
+
+
+                                <div class="col-md-4">
+                                    <label for="exampleInputEmail1">{{ 'translate.skuska_sprcha' | trans }}</label>
+                                    <select class="selectpicker" name="skuska_sprcha" data-width="100%" title="{{ 'translate.vyberte_si_jednu_z_moznosti' | trans }}">
+                                        <option value="Áno">{{ 'translate.ano' | trans }}</option>
+                                        <option value="Nie">{{ 'translate.nie' | trans }}</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="exampleInputEmail1">{{ 'translate.skuska_iqa' | trans }}</label>
+                                    <select class="selectpicker" name="skuska_iqa" data-width="100%" title="{{ 'translate.vyberte_si_jednu_z_moznosti' | trans }}">
+                                        <option value="Áno">{{ 'translate.ano' | trans }}</option>
+                                        <option value="Nie">{{ 'translate.nie' | trans }}</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="exampleInputEmail1">{{ 'translate.skuska_ine' | trans }}</label>
+                                    <input class="form-control form-control"  name="skuska_ine" type="text" />
+                                </div>
+                            </div>
+
+
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label for="exampleInputEmail1">{{ 'translate.modernizacia_po_skuske' | trans }}</label>
+                                    <select class="selectpicker" name="modernizacia_po_skuske" data-width="100%" title="{{ 'translate.vyberte_si_jednu_z_moznosti' | trans }}"  required=""  oninvalid="this.setCustomValidity('{{ 'translate.povinny_udaj' | trans }}')"  onchange="this.setCustomValidity('')">
+                                        <option value="Áno">{{ 'translate.ano' | trans }}</option>
+                                        <option value="Nie">{{ 'translate.nie' | trans }}</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label for="exampleInputEmail1">{{ 'translate.retus' | trans }}</label>
+                                    <input class="form-control form-control" title="retus" name="retus" type="text" />
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label for="exampleInputEmail1">{{ 'translate.pocet_aut_realizovanych' | trans }}</label>
+                                    <input class="form-control form-control"  name="pocet_aut_realizovanych"  oninvalid="this.setCustomValidity('{{ 'translate.zle_zadany_udaj' | trans }}')"  onchange="this.setCustomValidity('')" />
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class=" col-md-8">
+                                    <i class="fa fa-info-circle" style="color: red; resize: none"> {{ 'translate.upozornenie_nadpis' | trans }}</i>
+                                    <textarea id="textarea" class="form-control" style="height:5.7rem"  disabled  cols="" rows="" placeholder="{{ 'translate.upozornenie_text' | trans }}"></textarea>
+                                </div>
+                                <div class="col-md-4">
+                                    <button id="home-submit-btn" class="btn btn-success" type="submit" style="margin-top: 2.1rem; margin-left: 7rem">{{ 'translate.submit' | trans }}</button>
+                                    <a id="outlook-btn"    href="mailto:"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </form>
         </div>
-        </div>
-
-            <div class="row">
-                <div class="col-md-12">
-                    <label for="exampleInputEmail1">{{ 'translate.dotknute_posty_na_montazi' | trans }}</label>
-                    <textarea id="textarea"  class="form-control"  name="dotknute_posty_na_montazi" cols="" rows=""></textarea>
-                </div>
-
-                <div class="col-md-12">
-                    <label for="exampleInputEmail1">{{ 'translate.pozadovane_kontroly' | trans }}</label>
-                    <textarea id="textarea" class="form-control" name="pozadovane_kontroly" required=""  oninvalid="this.setCustomValidity('{{ 'translate.povinny_udaj' | trans }}')"  onchange="this.setCustomValidity('')" cols="" rows=""></textarea>
-                </div>
-
-
-                <div class="col-md-12">
-                    <label for="exampleInputEmail1">{{ 'translate.blokovat_auta_na_kontrolu' | trans }}  </label>
-                    <input required="" type="radio" name="blokovat_auta_na_kontrolu" data-otazka="1" value="Áno"   > {{ 'translate.ano' | trans }}
-                    <input required="" type="radio" name="blokovat_auta_na_kontrolu" data-otazka="1" value="Nie"  > {{ 'translate.nie' | trans }}
-                </div>
-
-
-
-                <div class="col-md-4">
-                    <label for="exampleInputEmail1">{{ 'translate.skuska_jazda' | trans }}</label>
-                    <select class="selectpicker" name="skuska_jazda" data-width="100%" title="{{ 'translate.vyberte_si_jednu_z_moznosti' | trans }}">
-                        <option value="Áno">{{ 'translate.ano' | trans }}</option>
-                        <option value="Nie">{{ 'translate.nie' | trans }}</option>
-                    </select>
-                </div>
-                <div class="col-md-4">
-                    <label for="exampleInputEmail1">{{ 'translate.skuska_iqf' | trans }}</label>
-                    <select class="selectpicker" name="skuska_iqf" data-width="100%" title="{{ 'translate.vyberte_si_jednu_z_moznosti' | trans }}">
-                        <option value="Áno">{{ 'translate.ano' | trans }}</option>
-                        <option value="Nie">{{ 'translate.nie' | trans }}</option>
-                    </select>
-                </div>
-                <div class="col-md-4">
-                    <label for="exampleInputEmail1">{{ 'translate.skuska_hluk' | trans }}</label>
-                    <select class="selectpicker" name="skuska_hluk" data-width="100%" title="{{ 'translate.vyberte_si_jednu_z_moznosti' | trans }}">
-                        <option value="Áno">{{ 'translate.ano' | trans }}</option>
-                        <option value="Nie">{{ 'translate.nie' | trans }}</option>
-                    </select>
-                </div>
-
-
-
-                <div class="col-md-4">
-                    <label for="exampleInputEmail1">{{ 'translate.skuska_sprcha' | trans }}</label>
-                    <select class="selectpicker" name="skuska_sprcha" data-width="100%" title="{{ 'translate.vyberte_si_jednu_z_moznosti' | trans }}">
-                        <option value="Áno">{{ 'translate.ano' | trans }}</option>
-                        <option value="Nie">{{ 'translate.nie' | trans }}</option>
-                    </select>
-                </div>
-                <div class="col-md-4">
-                    <label for="exampleInputEmail1">{{ 'translate.skuska_iqa' | trans }}</label>
-                    <select class="selectpicker" name="skuska_iqa" data-width="100%" title="{{ 'translate.vyberte_si_jednu_z_moznosti' | trans }}">
-                        <option value="Áno">{{ 'translate.ano' | trans }}</option>
-                        <option value="Nie">{{ 'translate.nie' | trans }}</option>
-                    </select>
-                </div>
-                <div class="col-md-4">
-                    <label for="exampleInputEmail1">{{ 'translate.skuska_ine' | trans }}</label>
-                    <input class="form-control form-control"  name="skuska_ine" type="text" />
-                </div>
-                </div>
-
-
-
-            <div class="row">
-                <div class="col-md-4">
-                    <label for="exampleInputEmail1">{{ 'translate.modernizacia_po_skuske' | trans }}</label>
-                    <select class="selectpicker" name="modernizacia_po_skuske" data-width="100%" title="{{ 'translate.vyberte_si_jednu_z_moznosti' | trans }}"  required=""  oninvalid="this.setCustomValidity('{{ 'translate.povinny_udaj' | trans }}')"  onchange="this.setCustomValidity('')">
-                        <option value="Áno">{{ 'translate.ano' | trans }}</option>
-                        <option value="Nie">{{ 'translate.nie' | trans }}</option>
-                    </select>
-                </div>
-
-                <div class="col-md-4">
-                    <label for="exampleInputEmail1">{{ 'translate.retus' | trans }}</label>
-                    <input class="form-control form-control" title="retus" name="retus" type="text" />
-                </div>
-
-                <div class="col-md-4">
-                    <label for="exampleInputEmail1">{{ 'translate.pocet_aut_realizovanych' | trans }}</label>
-                    <input class="form-control form-control"  name="pocet_aut_realizovanych"  oninvalid="this.setCustomValidity('{{ 'translate.zle_zadany_udaj' | trans }}')"  onchange="this.setCustomValidity('')" />
-                </div>
-            </div>
-            <br>
-            <div class="row">
-            <div class=" col-md-8">
-                <i class="fa fa-info-circle" style="color: red; resize: none"> {{ 'translate.upozornenie_nadpis' | trans }}</i>
-                <textarea id="textarea" class="form-control" style="height:5.7rem"  disabled  cols="" rows="" placeholder="{{ 'translate.upozornenie_text' | trans }}"></textarea>
-            </div>
-        <div class="col-md-4">
-            <button id="home-submit-btn" class="btn btn-success" type="submit" style="margin-top: 2.1rem; margin-left: 7rem">{{ 'translate.submit' | trans }}</button>
-            <a id="outlook-btn"    href="mailto:"></a>
-        </div>
-            </div>
-                 </div>
-                     </div>
-</form>
-
+    </div>
+</div>
 
 {% endblock %}
 

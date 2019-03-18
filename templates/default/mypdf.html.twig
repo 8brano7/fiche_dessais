@@ -5514,9 +5514,10 @@
 
     </style>
 
-        <div id="zoznam-container" class="container" style="padding: 2.5rem">
-                <div >
-                     <center><h1 style="font-size: 2rem"><b>Fiche d'essai / {{'translate.nadpisPDF1' | trans }} {{ zaznam.nazovSkusky }} / {{'translate.nadpisPDF2' | trans }} {{ zaznam.id }}</b></h1></center>
+        <div id="zoznam-container" class="container" style="padding: 2.7rem">
+                <div class="col text-center" >
+                     <center><h1 style="font-size: 2rem"><b>Fiche d'essai </b></h1></center>
+                    <center><h1 style="margin-top: 1rem; font-size: 1.6rem"> <b>{{'translate.nadpisPDF1' | trans }}</b> {{ zaznam.nazovSkusky }} / <b>{{'translate.nadpisPDF2' | trans }}</b> {{ zaznam.id }} </h1></center>
                 </div>
             </div>
             <div class="row">
@@ -5614,24 +5615,20 @@
                             <label hidden="true" for="exampleInputEmail1">{{ 'translate.ucastnici_skusky' | trans }}</label>
                             {#<input hidden="true" class="form-control"  name="ucastnici_skusky" value="{{ zaznam.ucastniciSkuskyText }}" />#}
                         </div>
-                        <div class="col-xs-4">
-                            <label for="exampleInputEmail1">{{ 'translate.ingq' | trans }}</label>
-                            <input class="form-control"  name="inqq"   value="{{ zaznam.iNGQArray }}" type="text"   />
-                        </div>
                     </div>
 
 
                     <div class="row">
                         <div class="col-xs-12">
                             <label for="exampleInput">{{ 'translate.dovod_skusky' | trans }}</label>
-                            <textarea id="textarea" class="form-control" name="dovod_skusky"    cols="" rows=""> {{ zaznam.dovodSkusky }}</textarea>
+                            <textarea id="textarea" style="height:6rem" class="form-control" name="dovod_skusky"    cols="" rows=""> {{ zaznam.dovodSkusky }}</textarea>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col-xs-12">
                             <label for="exampleInput">{{ 'translate.zmena_oproti_seriovemu_stavu' | trans }}</label>
-                            <textarea id="textarea" class="form-control"  name="zmena_oproti_seriovemu_stavu" cols="" rows="">{{ zaznam.zmenaOprotiSeriovemuStavu }}</textarea>
+                            <textarea id="textarea" style="height:6rem" class="form-control"  name="zmena_oproti_seriovemu_stavu" cols="" rows="">{{ zaznam.zmenaOprotiSeriovemuStavu }}</textarea>
                         </div>
                     </div>
 
@@ -5669,12 +5666,12 @@
             <div class="row">
                 <div class="col-xs-12">
                     <label for="exampleInputEmail1">{{ 'translate.dotknute_posty_na_montazi' | trans }}</label>
-                    <textarea id="textarea"  class="form-control"   name="dotknute_posty_na_montazi" cols="" rows="">{{ zaznam.dotknutePostyNaMontazi }}</textarea>
+                    <textarea id="textarea" style="height:6rem"  class="form-control"   name="dotknute_posty_na_montazi" cols="" rows="">{{ zaznam.dotknutePostyNaMontazi }}</textarea>
                 </div>
 
                 <div class="col-xs-12">
                     <label for="exampleInputEmail1">{{ 'translate.pozadovane_kontroly' | trans }}</label>
-                    <textarea id="textarea" class="form-control" name="pozadovane_kontroly" cols="" rows="">{{ zaznam.pozadovaneKontroly }}</textarea>
+                    <textarea  style="height:6rem" id="textarea" class="form-control" name="pozadovane_kontroly" cols="" rows="">{{ zaznam.pozadovaneKontroly }}</textarea>
                 </div>
 
 

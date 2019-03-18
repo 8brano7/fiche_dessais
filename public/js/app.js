@@ -12,6 +12,7 @@ $(document).ready(function () {
         console.log('/zaznam_form/');
         var locale = $('#zaznam-form').data('my-locale');
         var url = `/${locale}/zaznam_form`;
+        
 
         $.ajax({
             url: url,
@@ -22,7 +23,13 @@ $(document).ready(function () {
             // vrati ak je vsetko OK
         }).done(function (data) {
 
-            alert(data.msg);
+            // alert(data.msg);
+            if(locale=='sk') {
+                alert("Formular bol úspešne uložený do databázy.");
+            }
+            else  {
+                alert("La formule a été stockée avec succès dans la base de données.");
+            }
             console.log(data.mail);
 
             $('#outlook-btn').attr('href', data.mail);
@@ -43,8 +50,10 @@ $(document).ready(function () {
     //YYYY-MM-DD HH:mm
     $('.datetimepicker').datetimepicker({format: 'DD/MM/YYYY HH:mm'});
 
-
-})
+    $('#nazov-skusky').keyup(function(){
+        $('#fds-text').text($(this).val());
+    });
+});
 
 
 

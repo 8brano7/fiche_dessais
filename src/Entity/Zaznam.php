@@ -112,10 +112,7 @@ class Zaznam
      */
     private $ucastnici_skusky;
 
-    /**
-     * @ORM\Column(type="simple_array", nullable=true)
-     */
-    private $ingq;
+
 
 
 
@@ -477,21 +474,6 @@ class Zaznam
 
         return $this;
     }
-
-    public function getIngq(): ?array
-    {
-        return $this->ingq;
-    }
-
-    public function setIngq(?array $ingq): self
-    {
-        $this->ingq = $ingq;
-
-        return $this;
-    }
-
-
-
 
     public function getDovodSkusky(): ?string
     {
