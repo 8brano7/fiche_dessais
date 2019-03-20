@@ -52,7 +52,6 @@ class ZaznamType extends AbstractType
             -> add('pocet_aut_realizovanych' ,NumberType :: class )
             -> add('dotknute_posty_na_montazi' ,TextType :: class )
             -> add('blokovat_auta_na_kontrolu' ,TextType :: class )
-            -> add('pocet_aut_kontrola' ,NumberType :: class )
             -> add('skuska_jazda' ,TextType :: class )
             -> add('skuska_iqf' ,TextType :: class )
             -> add('skuska_hluk' ,TextType :: class )

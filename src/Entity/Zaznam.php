@@ -88,11 +88,6 @@ class Zaznam
 
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
-     */
-    private $c_danu;
-
-    /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $dodavatel;
@@ -162,10 +157,6 @@ class Zaznam
      */
     private $blokovat_auta_na_kontrolu;
 
-    /**
-     * @ORM\Column(type="integer", nullable=true)
-     */
-    private $pocet_aut_kontrola;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -415,17 +406,6 @@ class Zaznam
     }
 
 
-    public function getCDanu(): ?int
-    {
-        return $this->c_danu;
-    }
-
-    public function setCDanu(?int $c_danu): self
-    {
-        $this->c_danu = $c_danu;
-
-        return $this;
-    }
 
     public function getDodavatel(): ?string
     {
@@ -584,17 +564,6 @@ class Zaznam
         return $this;
     }
 
-    public function getPocetAutKontrola(): ?int
-    {
-        return $this->pocet_aut_kontrola;
-    }
-
-    public function setPocetAutKontrola(?int $pocet_aut_kontrola): self
-    {
-        $this->pocet_aut_kontrola = $pocet_aut_kontrola;
-
-        return $this;
-    }
 
     public function getDotknutePostyNaMontazi(): ?string
     {

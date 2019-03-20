@@ -69,5 +69,4 @@ translate.my_locale: fr
 translate.upozornenie_nadpis: Avertissement
 translate.upozornenie_text: Lorsque vous appuyez sur le bouton Envoyer, FDE est généré au format PDF et Outlook s'ouvre avec un lien vers le PDF.Il ne sera plus possible de modifier le formulaire après la soumission. Un nouveau formulaire doit être rempli et soumis pour correction.
 
-
-translate.len_ciselne_hodnoty: S'il vous plaît entrer uniquement des valeurs numériques!
+translate.len_ciselne_hodnoty: S il vous plaît entrer uniquement des valeurs numériques!

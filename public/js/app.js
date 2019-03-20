@@ -53,6 +53,13 @@ $(document).ready(function () {
     $('#nazov-skusky').keyup(function(){
         $('#fds-text').text($(this).val());
     });
+
+
+    $('input[required2]').on('invalid', function() {
+        this.setCustomValidity($(this).data("required-message"));
+    });
+
+
 });
 
 
