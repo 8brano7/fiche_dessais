@@ -7,6 +7,7 @@ use App\Form\ZaznamType;
 use Swift_Mailer;
 use Swift_Message;
 use Swift_SmtpTransport;
+use Symfony\Component\Form\FormInterface;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request ;
@@ -71,7 +72,18 @@ class DefaultController extends AbstractController
 
             return new JsonResponse(['msg' => 'Nahrate', 'mail' => $mail,], Response::HTTP_OK);
         }
-        return new JsonResponse(['msg' => 'Doslo k chybe'], Response::HTTP_BAD_REQUEST);
+
+        else {
+            $errors = $this->getErrorsFromForm($form);
+
+            $data = [
+                'type' => 'validation_error',
+                'title' => 'There was a validation error',
+                'errors' => $errors
+            ];
+            return new JsonResponse($data, Response::HTTP_BAD_REQUEST);
+        }
+
 
     }
 
@@ -99,8 +111,21 @@ class DefaultController extends AbstractController
         ]);
     }
 
-
-
+    private function getErrorsFromForm(FormInterface $form)
+    {
+        $errors = array();
+        foreach ($form->getErrors() as $error) {
+            $errors[] = $error->getMessage();
+        }
+        foreach ($form->all() as $childForm) {
+            if ($childForm instanceof FormInterface) {
+                if ($childErrors = $this->getErrorsFromForm($childForm)) {
+                    $errors[$childForm->getName()] = $childErrors;
+                }
+            }
+        }
+        return $errors;
+    }
 
 
 }

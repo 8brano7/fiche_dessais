@@ -83,6 +83,10 @@
             /*border-left: -0.7em solid transparent;*/
         }
 
+        .required {
+            color: red;
+            font-size: 15px;
+        }
 
 
         /*.btn {*/
@@ -129,8 +133,8 @@
                     </div>
                     <div class="row">
                         <div class="col-md-4">
-                            <label for="exampleInputEmail1">{{ 'translate.nazov_skusky' | trans }}</label>
-                            <input id="nazov-skusky" class="form-control"  name="nazov_skusky"  maxlength="60" required=""  oninvalid="this.setCustomValidity('{{ 'translate.povinny_udaj' | trans }}')"  onchange="this.setCustomValidity('')" />
+                            <label for="exampleInputEmail1" hviezdicka>{{ 'translate.nazov_skusky' | trans }}</label>
+                            <input id="nazov-skusky"  class="form-control"  name="nazov_skusky"  maxlength="60" required=""  oninvalid="this.setCustomValidity('{{ 'translate.povinny_udaj' | trans }}')"  onchange="this.setCustomValidity('')" />
                         </div>
                         <div class="col-md-4">
                             <label for="exampleInputEmail1">{{ 'translate.n_altis' | trans }}</label>
@@ -156,7 +160,7 @@
 
                         </div>
                         <div class="col-md-4">
-                            <label for="exampleInputEmail1">{{ 'translate.pozadovany_pocet_aut' | trans }}</label>
+                            <label for="exampleInputEmail1" hviezdicka>{{ 'translate.pozadovany_pocet_aut' | trans }}</label>
                             <input class="form-control no-spinners"  name="pozadovany_pocet_aut"   pattern="[0-9]+"   required required2 data-required-message="{{ 'translate.povinny_udaj' | trans }}"
                                    oninput="
                                            setCustomValidity('');
@@ -196,15 +200,15 @@
                                    />
                         </div>
                         <div class="col-md-4">
-                            <label for="exampleInputEmail1">{{ 'translate.oddelenie_ziadatela' | trans }}</label>
+                            <label for="exampleInputEmail1" hviezdicka>{{ 'translate.oddelenie_ziadatela' | trans }}</label>
                             <input class="form-control form-control"  name="oddelenie_ziadatela" type="text" required="" oninput="this.setCustomValidity('')"  oninvalid="this.setCustomValidity('{{ 'translate.povinny_udaj' | trans }}')" />
                         </div>
                         <div class="col-md-4">
-                            <label for="exampleInputEmail1">{{ 'translate.ziadatel_skusky' | trans }}</label>
+                            <label for="exampleInputEmail1" hviezdicka>{{ 'translate.ziadatel_skusky' | trans }}</label>
                             <input class="form-control form-control"  name="ziadatel_skusky"   type="text"  required=""  oninvalid="this.setCustomValidity('{{ 'translate.povinny_udaj' | trans }}')"  onchange="this.setCustomValidity('')" />
                         </div>
                         <div class="col-md-4">
-                            <label for="exampleInputEmail1">{{ 'translate.telefon' | trans }}</label>
+                            <label for="exampleInputEmail1" hviezdicka>{{ 'translate.telefon' | trans }}</label>
                             <input class="form-control form-control"  name="telefon"  placeholder="+ 421"   pattern="[0-9]+"   required required2 data-required-message="{{ 'translate.povinny_udaj' | trans }}"
                                    oninput="
                                            setCustomValidity('');
@@ -241,7 +245,7 @@
                                     <input class="form-control datetimepicker"   id='datetimepicker'  name="realizacia_skusky"  type="date"/>
                                 </div>
                                 <div class="col-md-4">
-                                    <label for="exampleInputEmail1">{{ 'translate.vozidla' | trans }}</label>
+                                    <label for="exampleInputEmail1" hviezdicka>{{ 'translate.vozidla' | trans }}</label>
                                     <select class="selectpicker" multiple="multiple" data-width="100%" title="{{ 'translate.vyberte_si_z_moznosti' | trans }} " name="vozidla[]"  required=""  oninvalid="this.setCustomValidity('{{ 'translate.povinny_udaj' | trans }}')"  onchange="this.setCustomValidity('')" >
                                         <option value="B6">B6</option>
                                         <option value="P21">P21</option>
@@ -281,7 +285,7 @@
                                     <input class="form-control form-control"  name="cislo_pracovneho_postupu" type="text" />
                                 </div>
                                 <div class="col-md-4">
-                                    <label for="exampleInputEmail1">{{ 'translate.mnozstvo_dielov' | trans }}</label>
+                                    <label for="exampleInputEmail1" hviezdicka>{{ 'translate.mnozstvo_dielov' | trans }}</label>
                                     <input class="form-control form-control"  name="mnozstvo_dielov" type="text"  required=""  oninvalid="this.setCustomValidity('{{ 'translate.povinny_udaj' | trans }}')"  onchange="this.setCustomValidity('')" />
                                 </div>
 
@@ -289,7 +293,7 @@
                                 <div class="col-md-4">
                                     <label for="exampleInputEmail1">{{ 'translate.ucastnici_skusky' | trans }}</label>
                                     <select class="selectpicker"  multiple data-live="true" data-width="100%" title="Vyberte si z možnosti" name="ucastnici_skusky[]"   oninvalid="this.setCustomValidity('{{ 'translate.povinny_udaj' | trans }}')"  onchange="this.setCustomValidity('')" >
-                                        <option value="cc" selected>CC</option>
+                                        <option  value="cc" selected>CC</option>
                                         <option value="cmon">CMON</option>
                                         <option value="dchm">DCHM</option>
                                         <option value="dsee">DSEE</option>
@@ -303,7 +307,7 @@
 
                             <div class="row">
                                 <div class="col-md-12">
-                                    <label for="exampleInput">{{ 'translate.dovod_skusky' | trans }}</label>
+                                    <label for="exampleInput" hviezdicka>{{ 'translate.dovod_skusky' | trans }}</label>
                                     <textarea id="textarea" class="form-control" name="dovod_skusky"  required=""  oninvalid="this.setCustomValidity('{{ 'translate.povinny_udaj' | trans }}')"  onchange="this.setCustomValidity('')" cols="" rows=""></textarea>
                                 </div>
                             </div>
@@ -322,7 +326,7 @@
                                 </div>
 
                                 <div class="col-md-3">
-                                    <label for="exampleInputEmail1">{{ 'translate.zmena_dielu' | trans }}</label>
+                                    <label for="exampleInputEmail1" hviezdicka>{{ 'translate.zmena_dielu' | trans }}</label>
                                 </div>
 
                                 <div class="col-md-3">
@@ -331,7 +335,7 @@
                                 </div>
 
                                 <div class="col-md-3">
-                                    <label for="exampleInputEmail1">{{ 'translate.zmena_skrutkovania' | trans }}</label>
+                                    <label for="exampleInputEmail1" hviezdicka>{{ 'translate.zmena_skrutkovania' | trans }}</label>
                                 </div>
 
                                 <div class="col-md-3">
@@ -340,7 +344,7 @@
                                 </div>
 
                                 <div class="col-md-3">
-                                    <label for="exampleInputEmail1">{{ 'translate.zmena_procesu' | trans }}</label>
+                                    <label for="exampleInputEmail1" hviezdicka>{{ 'translate.zmena_procesu' | trans }}</label>
                                 </div>
 
                                 <div class="col-md-3">
@@ -349,7 +353,7 @@
                                 </div>
 
                                 <div class="col-md-3">
-                                    <label for="exampleInputEmail1">{{ 'translate.zmena_bezpecnostneho_skrutkovania' | trans }}</label>
+                                    <label for="exampleInputEmail1" hviezdicka>{{ 'translate.zmena_bezpecnostneho_skrutkovania' | trans }}</label>
                                 </div>
 
                                 <div class="col-md-3">
@@ -358,7 +362,7 @@
                                 </div>
 
                                 <div class="col-md-3">
-                                    <label for="exampleInputEmail1">{{ 'translate.zmena_pracovneho_postupu' | trans }}</label>
+                                    <label for="exampleInputEmail1" hviezdicka>{{ 'translate.zmena_pracovneho_postupu' | trans }}</label>
                                 </div>
 
                                 <div class="col-md-3">
@@ -383,13 +387,13 @@
                                 </div>
 
                                 <div class="col-md-12">
-                                    <label for="exampleInputEmail1">{{ 'translate.pozadovane_kontroly' | trans }}</label>
+                                    <label for="exampleInputEmail1" hviezdicka>{{ 'translate.pozadovane_kontroly' | trans }}</label>
                                     <textarea id="textarea" class="form-control" name="pozadovane_kontroly" required=""  oninvalid="this.setCustomValidity('{{ 'translate.povinny_udaj' | trans }}')"  onchange="this.setCustomValidity('')" cols="" rows=""></textarea>
                                 </div>
 
 
                                 <div class="col-md-12">
-                                    <label for="exampleInputEmail1">{{ 'translate.blokovat_auta_na_kontrolu' | trans }}  </label>
+                                    <label for="exampleInputEmail1" hviezdicka>{{ 'translate.blokovat_auta_na_kontrolu' | trans }}  </label>
                                     <input required="" type="radio" name="blokovat_auta_na_kontrolu" data-otazka="1" value="Áno"   > {{ 'translate.ano' | trans }}
                                     <input required="" type="radio" name="blokovat_auta_na_kontrolu" data-otazka="1" value="Nie" style="margin-left: 0.3rem"  > {{ 'translate.nie' | trans }}
                                 </div>
@@ -444,7 +448,7 @@
 
                             <div class="row">
                                 <div class="col-md-4">
-                                    <label for="exampleInputEmail1">{{ 'translate.modernizacia_po_skuske' | trans }}</label>
+                                    <label for="exampleInputEmail1" hviezdicka>{{ 'translate.modernizacia_po_skuske' | trans }}</label>
                                     <select class="selectpicker" name="modernizacia_po_skuske" data-width="100%" title="{{ 'translate.vyberte_si_jednu_z_moznosti' | trans }}"  required=""  oninvalid="this.setCustomValidity('{{ 'translate.povinny_udaj' | trans }}')"  onchange="this.setCustomValidity('')">
                                         <option value="Áno">{{ 'translate.ano' | trans }}</option>
                                         <option value="Nie">{{ 'translate.nie' | trans }}</option>
@@ -457,7 +461,7 @@
                                 </div>
 
                                 <div class="col-md-4">
-                                    <label for="exampleInputEmail1">{{ 'translate.pocet_aut_realizovanych' | trans }}</label>
+                                    <label for="exampleInputEmail1" >{{ 'translate.pocet_aut_realizovanych' | trans }}</label>
                                     <input class="form-control form-control"  name="pocet_aut_realizovanych"  pattern="[0-9]+"
                                            oninput="
                                                    setCustomValidity('');
