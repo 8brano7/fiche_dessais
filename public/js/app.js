@@ -40,7 +40,7 @@ $(document).ready(function () {
             // $('#outlook-btn').trigger("click");
             // vrati ak je chyba - je to definovane aj v kontroleri
         }).fail(function (data) {
-            alert(data.zz);
+            alert();
         });
     });
 
@@ -62,6 +62,8 @@ $(document).ready(function () {
     jQuery(document).ready(function() {
         jQuery("[hviezdicka]").after("<span class='required'>*</span>");
     });
+
+
 
 
 });

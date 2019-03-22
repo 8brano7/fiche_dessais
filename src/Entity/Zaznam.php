@@ -60,7 +60,7 @@ class Zaznam
     private $ziadatel_skusky;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="text", length=255)
      */
     private $telefon;
 
@@ -343,12 +343,12 @@ class Zaznam
          return $this;
     }
 
-    public function getTelefon(): ?int
+    public function getTelefon(): ?string
     {
         return $this->telefon;
     }
 
-    public function setTelefon(?int $telefon): self
+    public function setTelefon(?string $telefon): self
     {
         $this->telefon = $telefon;
 
