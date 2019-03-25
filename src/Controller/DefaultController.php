@@ -120,10 +120,11 @@ class DefaultController extends AbstractController
         foreach ($form->all() as $childForm) {
             if ($childForm instanceof FormInterface) {
                 if ($childErrors = $this->getErrorsFromForm($childForm)) {
-                    $errors[$childForm->getName()] = $childErrors;
+                    $errors['chyby'][] = $childErrors[0];
                 }
             }
         }
+
         return $errors;
     }
 

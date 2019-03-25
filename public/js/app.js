@@ -39,8 +39,9 @@ $(document).ready(function () {
 
             // $('#outlook-btn').trigger("click");
             // vrati ak je chyba - je to definovane aj v kontroleri
-        }).fail(function (data) {
-            alert();
+        }).fail(function (jqXHR, textStatus, errorThrown) {
+            alert(jqXHR.responseJSON.errors.chyby[0]);
+
         });
     });
 
