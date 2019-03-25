@@ -1,0 +1,38 @@
+#knp_snappy:
+#    pdf:
+#        enabled:    true
+#        binary:     '%env(WKHTMLTOPDF_PATH)%'
+#        options:    []
+#    image:
+#        enabled:    true
+#        binary:     '%env(WKHTMLTOIMAGE_PATH)%'
+#        options:    []
+
+
+#knp_snappy:
+#    process_timeout: 60
+#    pdf:
+#        enabled:    true
+#        binary:     '%env(WKHTMLTOPDF_LIBRARY)%'
+#        options:
+#            - { name: 'viewport-size', value: ‘1024x768’ }
+#            - { name: 'page-size', value: 'A4' }
+#
+
+knp_snappy:
+    temporary_folder: "%kernel.cache_dir%/snappy"
+
+    pdf:
+        enabled:    true
+        binary:     "\"C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe\""
+        options:
+            no-outline:  true
+            page-size:   A4
+            orientation: Portrait
+            encoding:    UTF-8
+
+    image:
+        enabled:    true
+        binary:     "\"C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltoimage.exe\""
+        options:    []
+
